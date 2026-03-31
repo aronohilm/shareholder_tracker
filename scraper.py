@@ -82,7 +82,7 @@ def extract_from_table(soup: BeautifulSoup) -> list[dict]:
 
         # Look for name and percentage columns
         name_idx = next((i for i, h in enumerate(headers)
-                        if any(k in h for k in ["nafn", "name", "hluthafi", "shareholder"])), None)
+                        if any(k in h for k in ["nafn", "name", "hluthafi", "shareholder", "Nafn hluthafa"])), None)
         pct_idx = next((i for i, h in enumerate(headers)
                        if any(k in h for k in ["%", "eigna", "hlut", "share", "percent"])), None)
 
