@@ -12,28 +12,10 @@ companies:
     shareholder_url: "https://kaldalon.is/en/investors/?lang=en"
     fetch_type: static
 
-  - name: "Síminn hf."
-    ticker: SIMINN
-    sector: "Telecoms"
-    shareholder_url: "https://www.siminn.is/um-siminn/fjarfestatengslar/hluthafar/"
-    fetch_type: static
-
-  - name: "Arion banki hf."
-    ticker: ARION
-    sector: "Banks"
-    shareholder_url: "https://www.arionbanki.is/fjarfestaupplysingar/hluthafar/"
-    fetch_type: static
-
-  - name: "Íslandsbanki hf."
-    ticker: ISB
-    sector: "Banks"
-    shareholder_url: "https://www.islandsbanki.is/fjarfestatengslar/hluthafar"
-    fetch_type: static
-
   - name: "Kvika banki hf."
     ticker: KVIKA
     sector: "Banks"
-    shareholder_url: "https://kvika.is/fjarfestaupplysingar/?category=financialInformation&subCategory=0"
+    shareholder_url: "https://kvika.is/fjarfestaupplysingar/?category=shareholderCatalog"
     fetch_type: static
 
   # Add more companies here:
