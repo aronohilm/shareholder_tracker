@@ -84,7 +84,7 @@ def extract_from_table(soup: BeautifulSoup) -> list[dict]:
         name_idx = next((i for i, h in enumerate(headers)
                         if any(k in h for k in ["nafn", "name", "hluthafi", "shareholder"])), None)
         pct_idx = next((i for i, h in enumerate(headers)
-                       if any(k in h for k in ["%", "eigna", "hlut", "share", "percent"])), None)
+                       if any(k in h for k in ["%", "eignarhlutur", "ownership", "percent"])), None)
 
         # If no clear headers, assume first col = name, last col = percentage
         if name_idx is None:
