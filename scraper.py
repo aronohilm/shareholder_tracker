@@ -82,9 +82,9 @@ def extract_from_table(soup: BeautifulSoup) -> list[dict]:
 
         # Look for name and percentage columns
         name_idx = next((i for i, h in enumerate(headers)
-                        if any(k in h for k in ["nafn", "name", "hluthafi", "shareholder", "Nafn hluthafa"])), None)
+                        if any(k in h for k in ["nafn", "name", "hluthafi", "shareholder"])), None)
         pct_idx = next((i for i, h in enumerate(headers)
-                      if any(k in h for k in ["%", "eignarhlutur", "ownership", "percent"])), None)
+                       if any(k in h for k in ["%", "eigna", "hlut", "share", "percent"])), None)
 
         # If no clear headers, assume first col = name, last col = percentage
         if name_idx is None:
@@ -156,13 +156,12 @@ def extract_from_text(html: str) -> list[dict]:
 
             results.append({"name": name_part, "pct": pct})
 
-    # Deduplicate
-    seen = set()
+    # Deduplicate by name only (two holders can have identical pct)
+    seen_names = set()
     unique = []
     for r in results:
-        key = r["name"]
-        if key not in seen:
-            seen.add(key)
+        if r["name"] not in seen_names:
+            seen_names.add(r["name"])
             unique.append(r)
 
     return unique
