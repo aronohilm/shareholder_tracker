@@ -49,6 +49,10 @@ def scan_company(company: dict, state: dict) -> list[dict]:
     log.info(f"Scanning: {name} ({ticker})")
 
     current = get_shareholders(url, fetch_type)
+
+    #TESTING:
+    print("CURRENT:", current)
+
     if not current:
         log.warning(f"No shareholders found for {name} — skipping")
         return []

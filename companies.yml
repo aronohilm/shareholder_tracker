@@ -18,6 +18,12 @@ companies:
     shareholder_url: "https://kvika.is/fjarfestaupplysingar/?category=shareholderCatalog"
     fetch_type: static
 
+  - name: "Alvotech hf."
+    ticker: ALVO
+    sector: "Healthcare"
+    shareholder_url: "https://investors.alvotech.com/shareholders"
+    fetch_type: static
+
   # Add more companies here:
   # - name: "Company hf."
   #   ticker: TICKER
