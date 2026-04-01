@@ -66,58 +66,95 @@ def parse_percentage(s: str) -> float | None:
 def extract_from_table(soup: BeautifulSoup) -> list[dict]:
     """
     Try to extract shareholder data from HTML tables.
-    Looks for tables with name + percentage columns.
+    Looks for tables with shareholder-name + ownership-percentage columns.
     """
-    results = []
+    best_results = []
 
     for table in soup.find_all("table"):
+        table_results = []
         rows = table.find_all("tr")
         if len(rows) < 2:
             continue
 
-        # Find header row to identify columns
-        header_row = rows[0]
-        headers = [th.get_text(strip=True).lower() for th in
-                   header_row.find_all(["th", "td"])]
+        # Read header cells
+        header_cells = rows[0].find_all(["th", "td"])
+        headers = [c.get_text(" ", strip=True).lower() for c in header_cells]
 
-        # Look for name and percentage columns
-        name_idx = next((i for i, h in enumerate(headers)
-                        if any(k in h for k in ["nafn", "name", "hluthafi", "shareholder"])), None)
-        pct_idx = next((i for i, h in enumerate(headers)
-                       if any(k in h for k in ["%", "eignarhlutur", "ownership", "percent"])), None)
+        def is_name_header(h: str) -> bool:
+            return any(x in h for x in [
+                "nafn hluthafa",
+                "hluthafi",
+                "shareholder",
+                "name",
+            ])
 
-        # If no clear headers, assume first col = name, last col = percentage
+        def is_pct_header(h: str) -> bool:
+            return any(x in h for x in [
+                "%",
+                "eignarhlutur",
+                "ownership",
+                "percent",
+                "hlutfall",
+            ])
+
+        name_idx = next((i for i, h in enumerate(headers) if is_name_header(h)), None)
+        pct_idx = next((i for i, h in enumerate(headers) if is_pct_header(h)), None)
+
+        # Fallback only if headers are really unclear
         if name_idx is None:
             name_idx = 0
         if pct_idx is None:
             pct_idx = -1
 
         for row in rows[1:]:
-            cells = row.find_all(["td", "th"])
-            if len(cells) < 2:
+            # only direct cells in this row
+            cells = row.find_all(["td", "th"], recursive=False)
+
+            # fallback if recursive=False returns nothing
+            if not cells:
+                cells = row.find_all(["td", "th"])
+
+            if len(cells) <= max(name_idx, pct_idx):
+                log.debug("Skipping row, not enough cells: %s", row.get_text(" | ", strip=True))
                 continue
+
             try:
-                name = cells[name_idx].get_text(strip=True)
-                pct_raw = cells[pct_idx].get_text(strip=True)
+                name = cells[name_idx].get_text(" ", strip=True)
+                pct_raw = cells[pct_idx].get_text(" ", strip=True)
                 pct = parse_percentage(pct_raw)
 
-                # Skip header-like rows, empty rows, total rows
                 if not name or pct is None:
-                    continue
-                if any(k in name.lower() for k in ["samtals", "total", "aðrir", "others", "nafn"]):
-                    continue
-                if pct <= 0 or pct > 100:
+                    log.debug("Skipping row, bad name/pct: name=%r pct_raw=%r", name, pct_raw)
                     continue
 
-                results.append({"name": name, "pct": pct})
-            except (IndexError, AttributeError):
+                lowered = name.lower()
+                if any(k in lowered for k in ["samtals", "total", "aðrir", "others", "nafn"]):
+                    continue
+
+                if pct <= 0 or pct > 100:
+                    log.debug("Skipping row, invalid pct: name=%r pct=%r", name, pct)
+                    continue
+
+                table_results.append({"name": name, "pct": pct})
+
+            except Exception as e:
+                log.debug("Row parse error: %s | row=%s", e, row.get_text(" | ", strip=True))
                 continue
 
-        if results:
-            return results
+        # keep the biggest valid table, not just first non-empty one
+        if len(table_results) > len(best_results):
+            best_results = table_results
 
-    return results
+    # dedupe by (name, pct), not pct only
+    seen = set()
+    unique = []
+    for r in best_results:
+        key = (r["name"], r["pct"])
+        if key not in seen:
+            seen.add(key)
+            unique.append(r)
 
+    return unique
 
 def extract_from_text(html: str) -> list[dict]:
     """
@@ -186,6 +223,8 @@ def get_shareholders(url: str, fetch_type: str = "static") -> list[dict]:
     if not shareholders:
         log.info("Table extraction found nothing, trying text extraction")
         shareholders = extract_from_text(html)
+
+    log.info("Raw shareholders: %s", shareholders)
 
     # Sort by percentage descending, take top 25
     shareholders = sorted(shareholders, key=lambda x: x["pct"], reverse=True)[:25]
