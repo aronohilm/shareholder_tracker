@@ -3,63 +3,67 @@
     "name": "Kvika banki hf.",
     "shareholders": [
       {
-        "name": "Lífeyrissjóður verzlunarmanna",
+        "name": "398.083.679",
         "pct": 9.19
       },
       {
-        "name": "Gildi - lífeyrissjóður",
+        "name": "363.879.756",
         "pct": 8.4
       },
       {
-        "name": "Lífeyrissj.starfsm.rík. A-deild",
+        "name": "355.612.313",
         "pct": 8.21
       },
       {
-        "name": "Birta lífeyrissjóður",
+        "name": "336.637.141",
         "pct": 7.77
       },
       {
-        "name": "Almenni-Lífsverk lífeyrissjóður",
+        "name": "237.896.173",
         "pct": 5.49
       },
       {
-        "name": "Stoðir hf.",
+        "name": "235.000.000",
         "pct": 5.43
       },
       {
-        "name": "Arion banki hf.",
+        "name": "126.179.615",
         "pct": 2.91
       },
       {
-        "name": "Frjálsi lífeyrissjóðurinn",
+        "name": "124.351.894",
         "pct": 2.87
       },
       {
-        "name": "Stapi lífeyrissjóður",
+        "name": "110.909.112",
         "pct": 2.56
       },
       {
-        "name": "Lífeyrissj.starfsm.rík. B-deild",
+        "name": "66.139.445",
         "pct": 1.53
       },
       {
-        "name": "Landsbankinn hf.",
+        "name": "64.199.255",
         "pct": 1.48
       },
       {
-        "name": "Vanguard Emerging Markets Stock",
+        "name": "63.901.131",
+        "pct": 1.48
+      },
+      {
+        "name": "56.864.717",
         "pct": 1.31
       },
       {
-        "name": "Landsbréf - Úrvalsbréf hs.",
+        "name": "48.213.692",
         "pct": 1.11
       },
       {
-        "name": "Vörður tryggingar hf.",
+        "name": "43.313.658",
         "pct": 1.0
       }
     ],
-    "last_scan": "2026-04-01T09:16:58.631284+00:00",
-    "total": 14
+    "last_scan": "2026-04-01T13:45:24.473726+00:00",
+    "total": 15
   }
 }
