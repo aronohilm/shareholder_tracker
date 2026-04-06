@@ -16,7 +16,7 @@
       },
       {
         "name": "Birta lífeyrissjóður",
-        "pct": 7.79
+        "pct": 7.81
       },
       {
         "name": "Almenni-Lífsverk lífeyrissjóður",
@@ -28,7 +28,7 @@
       },
       {
         "name": "Arion banki hf.",
-        "pct": 3.01
+        "pct": 2.98
       },
       {
         "name": "Frjálsi lífeyrissjóðurinn",
@@ -39,12 +39,12 @@
         "pct": 2.56
       },
       {
-        "name": "Lífeyrissj.starfsm.rík. B-deild",
-        "pct": 1.53
+        "name": "Landsbankinn hf.",
+        "pct": 1.56
       },
       {
-        "name": "Landsbankinn hf.",
-        "pct": 1.48
+        "name": "Lífeyrissj.starfsm.rík. B-deild",
+        "pct": 1.53
       },
       {
         "name": "Vanguard Emerging Markets Stock",
@@ -59,7 +59,7 @@
         "pct": 1.0
       }
     ],
-    "last_scan": "2026-04-03T09:03:30.093805+00:00",
+    "last_scan": "2026-04-06T09:17:21.327928+00:00",
     "total": 14
   }
 }
