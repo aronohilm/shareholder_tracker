@@ -59,7 +59,1029 @@
         "pct": 1.0
       }
     ],
-    "last_scan": "2026-04-07T09:13:09.529455+00:00",
+    "last_scan": "2026-04-07T14:23:06.582864+00:00",
     "total": 14
+  },
+  "ARION": {
+    "name": "Arion banki hf.",
+    "shareholders": [
+      {
+        "name": "Gildi Pension Fund",
+        "pct": 9.51
+      },
+      {
+        "name": "Live Pension Fund",
+        "pct": 9.38
+      },
+      {
+        "name": "LSR Pension Fund",
+        "pct": 8.98
+      },
+      {
+        "name": "Brú Pension Fund",
+        "pct": 5.12
+      },
+      {
+        "name": "Stoðir hf.",
+        "pct": 5.07
+      },
+      {
+        "name": "Vanguard",
+        "pct": 4.07
+      },
+      {
+        "name": "Frjálsi Pension Fund",
+        "pct": 3.92
+      },
+      {
+        "name": "Arion banki hf.",
+        "pct": 3.85
+      },
+      {
+        "name": "Almenni-Lífsverk Pension Fund",
+        "pct": 3.52
+      },
+      {
+        "name": "Birta Pension Fund",
+        "pct": 2.95
+      },
+      {
+        "name": "Stapi Pension Fund",
+        "pct": 2.74
+      },
+      {
+        "name": "Festa Pension Fund",
+        "pct": 2.61
+      },
+      {
+        "name": "Hvalur hf.",
+        "pct": 2.59
+      },
+      {
+        "name": "Number of issued SDRs",
+        "pct": 2.12
+      },
+      {
+        "name": "Stefnir Funds",
+        "pct": 1.53
+      },
+      {
+        "name": "Íslandsbanki hf.",
+        "pct": 1.43
+      },
+      {
+        "name": "Landsbréf hf.",
+        "pct": 1.07
+      }
+    ],
+    "last_scan": "2026-04-07T14:23:05.041157+00:00",
+    "total": 17
+  },
+  "SJOVA": {
+    "name": "Sjóvá-Almennar tryggingar hf.",
+    "shareholders": [
+      {
+        "name": "Íslandsbanki hf.",
+        "pct": 99.0
+      },
+      {
+        "name": "Vanguard Emerging Markets Stock",
+        "pct": 95.0
+      },
+      {
+        "name": "Eftirlaunasjóður FÍA",
+        "pct": 89.0
+      },
+      {
+        "name": "Kvika - Innlend hlutabréf",
+        "pct": 82.0
+      },
+      {
+        "name": "Almenni-Lífsverk lífeyrissjóður",
+        "pct": 75.0
+      },
+      {
+        "name": "Hrólfssker ehf.",
+        "pct": 15.87
+      },
+      {
+        "name": "Snæból ehf.",
+        "pct": 9.73
+      },
+      {
+        "name": "Gildi - lífeyrissjóður",
+        "pct": 9.15
+      },
+      {
+        "name": "Frjálsi lífeyrissjóðurinn",
+        "pct": 7.79
+      },
+      {
+        "name": "Lífeyrissj.starfsm.rík. A-deild",
+        "pct": 7.62
+      },
+      {
+        "name": "Lífeyrissjóður verzlunarmanna",
+        "pct": 7.09
+      },
+      {
+        "name": "Brú Lífeyrissjóður starfs sveit",
+        "pct": 6.75
+      },
+      {
+        "name": "EGG fjárfestingar ehf.",
+        "pct": 3.31
+      },
+      {
+        "name": "Stapi lífeyrissjóður",
+        "pct": 2.26
+      },
+      {
+        "name": "Birta lífeyrissjóður",
+        "pct": 1.89
+      },
+      {
+        "name": "Stefnir - Innlend hlutabréf hs.",
+        "pct": 1.87
+      },
+      {
+        "name": "Brú R deild",
+        "pct": 1.43
+      },
+      {
+        "name": "Lífeyrissj.starfsm.rík. B-deild",
+        "pct": 1.42
+      },
+      {
+        "name": "HMP ehf.",
+        "pct": 1.0
+      }
+    ],
+    "last_scan": "2026-04-07T14:23:08.790312+00:00",
+    "total": 19
+  },
+  "SIMINN": {
+    "name": "Síminn hf.",
+    "shareholders": [
+      {
+        "name": "Stoðir hf.",
+        "pct": 19.22
+      },
+      {
+        "name": "Lífeyrissj.starfsm.rík. A-deild",
+        "pct": 10.78
+      },
+      {
+        "name": "Brú Lífeyrissjóður starfs sveit",
+        "pct": 10.45
+      },
+      {
+        "name": "Lífeyrissjóður verzlunarmanna",
+        "pct": 8.29
+      },
+      {
+        "name": "Gildi - lífeyrissjóður",
+        "pct": 7.56
+      },
+      {
+        "name": "Söfnunarsjóður lífeyrisréttinda",
+        "pct": 3.72
+      },
+      {
+        "name": "Stapi lífeyrissjóður",
+        "pct": 3.31
+      },
+      {
+        "name": "Birta lífeyrissjóður",
+        "pct": 3.13
+      },
+      {
+        "name": "Síminn hf.",
+        "pct": 3.08
+      },
+      {
+        "name": "Lífeyrissj.starfsm.rík. B-deild",
+        "pct": 2.12
+      }
+    ],
+    "last_scan": "2026-04-07T14:23:11.898178+00:00",
+    "total": 10
+  },
+  "AMRQ": {
+    "name": "Amaroq Minerals Ltd.",
+    "shareholders": [
+      {
+        "name": "Industriens Pensionsforsikring A/S",
+        "pct": 4.63
+      },
+      {
+        "name": "Danmarks Eksport – og Investeringsfond",
+        "pct": 4.15
+      },
+      {
+        "name": "Lífeyrissjóður starfsmanna ríkisins, div. A.",
+        "pct": 4.04
+      },
+      {
+        "name": "Gildi-lífeyrissjóður",
+        "pct": 3.76
+      },
+      {
+        "name": "Eldur Olafsson (1)",
+        "pct": 3.56
+      },
+      {
+        "name": "Livermore (2)",
+        "pct": 3.17
+      },
+      {
+        "name": "First Pecos, LLC",
+        "pct": 3.14
+      }
+    ],
+    "last_scan": "2026-04-07T14:23:19.038026+00:00",
+    "total": 7
+  },
+  "BRIM": {
+    "name": "Brim hf.",
+    "shareholders": [
+      {
+        "name": "9.370.737",
+        "pct": 48.0
+      },
+      {
+        "name": "9.100.000",
+        "pct": 47.0
+      },
+      {
+        "name": "8.990.000",
+        "pct": 46.0
+      },
+      {
+        "name": "859.870.977",
+        "pct": 43.96
+      },
+      {
+        "name": "8.100.000",
+        "pct": 41.0
+      },
+      {
+        "name": "7.610.500",
+        "pct": 39.0
+      },
+      {
+        "name": "262.387.000",
+        "pct": 13.41
+      },
+      {
+        "name": "196.780.503",
+        "pct": 10.06
+      },
+      {
+        "name": "80.993.298",
+        "pct": 4.14
+      },
+      {
+        "name": "78.024.576",
+        "pct": 3.99
+      },
+      {
+        "name": "63.140.565",
+        "pct": 3.23
+      },
+      {
+        "name": "47.889.000",
+        "pct": 2.45
+      },
+      {
+        "name": "36.500.000",
+        "pct": 1.87
+      },
+      {
+        "name": "31.071.090",
+        "pct": 1.59
+      },
+      {
+        "name": "30.532.917",
+        "pct": 1.56
+      },
+      {
+        "name": "23.994.880",
+        "pct": 1.23
+      }
+    ],
+    "last_scan": "2026-04-07T14:23:20.799384+00:00",
+    "total": 16
+  },
+  "HAGA": {
+    "name": "Hagar hf.",
+    "shareholders": [
+      {
+        "name": "17",
+        "pct": 83.0
+      },
+      {
+        "name": "18",
+        "pct": 76.0
+      },
+      {
+        "name": "19",
+        "pct": 72.0
+      },
+      {
+        "name": "20",
+        "pct": 64.0
+      },
+      {
+        "name": "1",
+        "pct": 16.26
+      },
+      {
+        "name": "2",
+        "pct": 12.34
+      },
+      {
+        "name": "3",
+        "pct": 11.42
+      },
+      {
+        "name": "4",
+        "pct": 8.37
+      },
+      {
+        "name": "5",
+        "pct": 8.13
+      },
+      {
+        "name": "6",
+        "pct": 6.48
+      },
+      {
+        "name": "7",
+        "pct": 4.17
+      },
+      {
+        "name": "8",
+        "pct": 2.96
+      },
+      {
+        "name": "9",
+        "pct": 2.38
+      },
+      {
+        "name": "10",
+        "pct": 2.37
+      },
+      {
+        "name": "11",
+        "pct": 1.83
+      },
+      {
+        "name": "12",
+        "pct": 1.61
+      },
+      {
+        "name": "13",
+        "pct": 1.49
+      },
+      {
+        "name": "14",
+        "pct": 1.27
+      },
+      {
+        "name": "15",
+        "pct": 1.2
+      },
+      {
+        "name": "16",
+        "pct": 1.03
+      }
+    ],
+    "last_scan": "2026-04-07T14:23:22.669684+00:00",
+    "total": 20
+  },
+  "HAMP": {
+    "name": "Hampiðjan hf.",
+    "shareholders": [
+      {
+        "name": "17.",
+        "pct": 63.0
+      },
+      {
+        "name": "18.",
+        "pct": 52.0
+      },
+      {
+        "name": "19",
+        "pct": 51.0
+      },
+      {
+        "name": "20.",
+        "pct": 50.0
+      },
+      {
+        "name": "1.",
+        "pct": 36.62
+      },
+      {
+        "name": "2.",
+        "pct": 6.48
+      },
+      {
+        "name": "3.",
+        "pct": 6.24
+      },
+      {
+        "name": "4.",
+        "pct": 5.58
+      },
+      {
+        "name": "5.",
+        "pct": 4.11
+      },
+      {
+        "name": "6.",
+        "pct": 3.19
+      },
+      {
+        "name": "7.",
+        "pct": 3.01
+      },
+      {
+        "name": "8.",
+        "pct": 2.72
+      },
+      {
+        "name": "9.",
+        "pct": 2.6
+      },
+      {
+        "name": "10.",
+        "pct": 1.89
+      },
+      {
+        "name": "11.",
+        "pct": 1.32
+      },
+      {
+        "name": "12.",
+        "pct": 1.27
+      },
+      {
+        "name": "13.",
+        "pct": 1.23
+      },
+      {
+        "name": "14.",
+        "pct": 1.18
+      },
+      {
+        "name": "15.",
+        "pct": 1.11
+      },
+      {
+        "name": "16.",
+        "pct": 1.03
+      }
+    ],
+    "last_scan": "2026-04-07T14:23:24.747965+00:00",
+    "total": 20
+  },
+  "SYN": {
+    "name": "Sýn hf.",
+    "shareholders": [
+      {
+        "name": "45.147.128",
+        "pct": 18.23
+      },
+      {
+        "name": "40.589.224",
+        "pct": 16.39
+      },
+      {
+        "name": "25.000.000",
+        "pct": 10.09
+      },
+      {
+        "name": "20.650.000",
+        "pct": 8.34
+      },
+      {
+        "name": "13.678.286",
+        "pct": 5.52
+      },
+      {
+        "name": "12.000.000",
+        "pct": 4.85
+      },
+      {
+        "name": "11.559.035",
+        "pct": 4.67
+      },
+      {
+        "name": "11.026.599",
+        "pct": 4.45
+      },
+      {
+        "name": "10.863.103",
+        "pct": 4.39
+      },
+      {
+        "name": "8.519.283",
+        "pct": 3.44
+      },
+      {
+        "name": "6.451.576",
+        "pct": 2.61
+      },
+      {
+        "name": "4.464.900",
+        "pct": 1.8
+      },
+      {
+        "name": "4.000.000",
+        "pct": 1.62
+      },
+      {
+        "name": "3.500.000",
+        "pct": 1.41
+      },
+      {
+        "name": "2.973.919",
+        "pct": 1.2
+      }
+    ],
+    "last_scan": "2026-04-07T14:23:30.861136+00:00",
+    "total": 15
+  },
+  "NOVA": {
+    "name": "Nova hf.",
+    "shareholders": [
+      {
+        "name": "849.815.237",
+        "pct": 23.9
+      },
+      {
+        "name": "298.550.236",
+        "pct": 8.4
+      },
+      {
+        "name": "206.492.403",
+        "pct": 5.8
+      },
+      {
+        "name": "181.076.759",
+        "pct": 5.1
+      },
+      {
+        "name": "157.930.000",
+        "pct": 4.4
+      },
+      {
+        "name": "101.068.772",
+        "pct": 2.8
+      },
+      {
+        "name": "80.600.842",
+        "pct": 2.3
+      },
+      {
+        "name": "65.225.854",
+        "pct": 1.8
+      },
+      {
+        "name": "64.394.286",
+        "pct": 1.8
+      },
+      {
+        "name": "52.250.000",
+        "pct": 1.5
+      },
+      {
+        "name": "55.382.281",
+        "pct": 1.5
+      },
+      {
+        "name": "50.698.230",
+        "pct": 1.4
+      },
+      {
+        "name": "443.16.908",
+        "pct": 1.4
+      },
+      {
+        "name": "41.462.209",
+        "pct": 1.2
+      },
+      {
+        "name": "42.106.401",
+        "pct": 1.1
+      }
+    ],
+    "last_scan": "2026-04-07T14:23:40.115718+00:00",
+    "total": 15
+  },
+  "FESTI": {
+    "name": "Festir hf.",
+    "shareholders": [
+      {
+        "name": "17",
+        "pct": 99.0
+      },
+      {
+        "name": "18",
+        "pct": 76.0
+      },
+      {
+        "name": "19",
+        "pct": 73.0
+      },
+      {
+        "name": "20",
+        "pct": 60.0
+      },
+      {
+        "name": "1",
+        "pct": 15.61
+      },
+      {
+        "name": "2",
+        "pct": 12.07
+      },
+      {
+        "name": "3",
+        "pct": 10.49
+      },
+      {
+        "name": "4",
+        "pct": 9.74
+      },
+      {
+        "name": "5",
+        "pct": 6.88
+      },
+      {
+        "name": "6",
+        "pct": 4.51
+      },
+      {
+        "name": "7",
+        "pct": 3.93
+      },
+      {
+        "name": "8",
+        "pct": 3.89
+      },
+      {
+        "name": "9",
+        "pct": 3.46
+      },
+      {
+        "name": "10",
+        "pct": 2.77
+      },
+      {
+        "name": "11",
+        "pct": 2.11
+      },
+      {
+        "name": "12",
+        "pct": 1.81
+      },
+      {
+        "name": "13",
+        "pct": 1.66
+      },
+      {
+        "name": "14",
+        "pct": 1.58
+      },
+      {
+        "name": "15",
+        "pct": 1.15
+      },
+      {
+        "name": "16",
+        "pct": 1.08
+      }
+    ],
+    "last_scan": "2026-04-07T14:24:38.735498+00:00",
+    "total": 20
+  },
+  "HEIMAR": {
+    "name": "Heimar hf.",
+    "shareholders": [
+      {
+        "name": "1",
+        "pct": 12.82
+      },
+      {
+        "name": "2",
+        "pct": 9.8
+      },
+      {
+        "name": "3",
+        "pct": 8.32
+      },
+      {
+        "name": "4",
+        "pct": 7.12
+      },
+      {
+        "name": "5",
+        "pct": 7.07
+      },
+      {
+        "name": "6",
+        "pct": 6.53
+      },
+      {
+        "name": "7",
+        "pct": 3.87
+      },
+      {
+        "name": "8",
+        "pct": 3.56
+      },
+      {
+        "name": "9",
+        "pct": 3.41
+      },
+      {
+        "name": "10",
+        "pct": 3.28
+      },
+      {
+        "name": "11",
+        "pct": 3.12
+      },
+      {
+        "name": "12",
+        "pct": 2.94
+      },
+      {
+        "name": "13",
+        "pct": 2.61
+      },
+      {
+        "name": "14",
+        "pct": 2.49
+      },
+      {
+        "name": "15",
+        "pct": 2.01
+      },
+      {
+        "name": "16",
+        "pct": 1.79
+      },
+      {
+        "name": "17",
+        "pct": 1.42
+      },
+      {
+        "name": "18",
+        "pct": 1.35
+      },
+      {
+        "name": "19",
+        "pct": 1.31
+      },
+      {
+        "name": "20",
+        "pct": 1.31
+      }
+    ],
+    "last_scan": "2026-04-07T14:24:46.458056+00:00",
+    "total": 20
+  },
+  "ISB": {
+    "name": "Íslandsbanki hf.",
+    "shareholders": [
+      {
+        "name": "Lífeyrissjóður starfsmanna ríkisins",
+        "pct": 8.23
+      },
+      {
+        "name": "Gildi lífeyrissjóður",
+        "pct": 7.55
+      },
+      {
+        "name": "Lífeyrissjóður verzlunarmanna",
+        "pct": 6.43
+      },
+      {
+        "name": "Brú lífeyrissjóður",
+        "pct": 4.42
+      },
+      {
+        "name": "Vanguard",
+        "pct": 4.3
+      },
+      {
+        "name": "Frjálsi lífeyrissjóðurinn",
+        "pct": 3.12
+      },
+      {
+        "name": "Almenni-Lífsverk lífeyrissjóður",
+        "pct": 2.59
+      },
+      {
+        "name": "Kvika banki hf.",
+        "pct": 2.13
+      },
+      {
+        "name": "Stapi lífeyrissjóður",
+        "pct": 1.93
+      },
+      {
+        "name": "Birta lífeyrissjóður",
+        "pct": 1.62
+      },
+      {
+        "name": "Íslandsbanki hf.",
+        "pct": 1.25
+      },
+      {
+        "name": "Festa lífeyrissjóður",
+        "pct": 1.08
+      },
+      {
+        "name": "Landsbréf hf.",
+        "pct": 1.03
+      }
+    ],
+    "last_scan": "2026-04-07T14:25:25.129353+00:00",
+    "total": 13
+  },
+  "REITIR": {
+    "name": "Reitir fasteignafélag hf.",
+    "shareholders": [
+      {
+        "name": "20",
+        "pct": 99.0
+      },
+      {
+        "name": "1",
+        "pct": 18.74
+      },
+      {
+        "name": "2",
+        "pct": 11.0
+      },
+      {
+        "name": "3",
+        "pct": 8.35
+      },
+      {
+        "name": "4",
+        "pct": 5.16
+      },
+      {
+        "name": "5",
+        "pct": 4.57
+      },
+      {
+        "name": "6",
+        "pct": 4.52
+      },
+      {
+        "name": "7",
+        "pct": 4.22
+      },
+      {
+        "name": "8",
+        "pct": 4.11
+      },
+      {
+        "name": "9",
+        "pct": 3.78
+      },
+      {
+        "name": "10",
+        "pct": 3.03
+      },
+      {
+        "name": "11",
+        "pct": 2.77
+      },
+      {
+        "name": "12",
+        "pct": 2.54
+      },
+      {
+        "name": "13",
+        "pct": 2.45
+      },
+      {
+        "name": "14",
+        "pct": 1.83
+      },
+      {
+        "name": "15",
+        "pct": 1.51
+      },
+      {
+        "name": "16",
+        "pct": 1.37
+      },
+      {
+        "name": "17",
+        "pct": 1.25
+      },
+      {
+        "name": "18",
+        "pct": 1.14
+      },
+      {
+        "name": "19",
+        "pct": 1.02
+      }
+    ],
+    "last_scan": "2026-04-07T14:25:31.801992+00:00",
+    "total": 20
+  },
+  "SKAGI": {
+    "name": "Skagi hf.",
+    "shareholders": [
+      {
+        "name": "Sjávarsýn ehf.",
+        "pct": 9.8
+      },
+      {
+        "name": "Lífeyrissj.starfsm.rík. A-deild",
+        "pct": 8.6
+      },
+      {
+        "name": "Skel fjárfestingafélag hf.",
+        "pct": 8.1
+      },
+      {
+        "name": "Gildi - lífeyrissjóður",
+        "pct": 8.1
+      },
+      {
+        "name": "Lífeyrissjóður verzlunarmanna",
+        "pct": 7.7
+      },
+      {
+        "name": "Frjálsi lífeyrissjóðurinn",
+        "pct": 7.5
+      },
+      {
+        "name": "Klettar fjárfestingar ehf.",
+        "pct": 4.7
+      },
+      {
+        "name": "Stapi lífeyrissjóður",
+        "pct": 4.2
+      },
+      {
+        "name": "H3 ehf.",
+        "pct": 2.9
+      },
+      {
+        "name": "Birta lífeyrissjóður",
+        "pct": 2.8
+      },
+      {
+        "name": "Stefnir - Innlend hlutabréf hs.",
+        "pct": 2.0
+      },
+      {
+        "name": "Almenni-Lífsverk lífeyrissjóður",
+        "pct": 1.9
+      },
+      {
+        "name": "Kormákur Invest ehf.",
+        "pct": 1.8
+      },
+      {
+        "name": "Lífeyrissj.starfsm.rík. B-deild",
+        "pct": 1.6
+      },
+      {
+        "name": "Arion banki hf.",
+        "pct": 1.4
+      },
+      {
+        "name": "Landsbankinn hf.",
+        "pct": 1.2
+      },
+      {
+        "name": "Stefnir - ÍS 5 hs.",
+        "pct": 1.1
+      },
+      {
+        "name": "Skagi hf.",
+        "pct": 1.1
+      },
+      {
+        "name": "Vindhamar ehf.",
+        "pct": 1.0
+      }
+    ],
+    "last_scan": "2026-04-07T14:25:38.513266+00:00",
+    "total": 19
   }
 }
