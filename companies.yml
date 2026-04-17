@@ -1,8 +1,16 @@
 # companies.yml — Shareholder Tracker
 # Updated after first test run on 2026-04-02
+# companies.yml — Shareholder Tracker
+# Updated after first test run on 2026-04-02
 
 companies:
 
+  # ── Working perfectly ────────────────────────────────────────────────────
+
+  - name: "Arion banki hf."
+    ticker: ARION
+    sector: Banks
+    shareholder_url: "https://www.arionbanki.is/fjarfestaupplysingar/hlutabref/hluthafalisti"
   # ── Working perfectly ────────────────────────────────────────────────────
 
   - name: "Arion banki hf."
@@ -14,9 +22,59 @@ companies:
   - name: "Kvika banki hf."
     ticker: KVIKA
     sector: Banks
+    sector: Banks
     shareholder_url: "https://kvika.is/fjarfestaupplysingar/?category=shareholderCatalog"
     fetch_type: static
 
+  - name: "Sjóvá-Almennar tryggingar hf."
+    ticker: SJOVA
+    sector: Insurance
+    shareholder_url: "https://www.sjova.is/sjova/upplysingagjof/fjarfestar/hluthafalisti"
+    fetch_type: static
+
+  - name: "Síminn hf."
+    ticker: SIMINN
+    sector: Telecoms
+    shareholder_url: "https://www.siminn.is/fjarfestar/hluthafar-og-hlutabref"
+    fetch_type: static
+
+  - name: "Amaroq Minerals Ltd."
+    ticker: AMRQ
+    sector: Mining
+    shareholder_url: "https://www.amaroqminerals.com/investors/shareholders/"
+    fetch_type: js
+
+  # ── Getting numbers/ranks instead of names — fixed by scraper update ────
+  # These should work after scraper.py update
+
+  - name: "Brim hf."
+    ticker: BRIM
+    sector: Fisheries
+    shareholder_url: "https://www.brim.is/is/fjarfestar/hluthafaupplysingar"
+    fetch_type: static
+
+  - name: "Hagar hf."
+    ticker: HAGA
+    sector: Retail
+    shareholder_url: "https://www.hagar.is/fjarfestar/hluthafaupplysingar/hluthafalisti/"
+    fetch_type: static
+
+  - name: "Hampiðjan hf."
+    ticker: HAMP
+    sector: Fisheries
+    shareholder_url: "https://hampidjan.is/fjarmal/hluthafar/"
+    fetch_type: static
+
+  - name: "Kaldalón hf."
+    ticker: KALD
+    sector: "Real Estate"
+    shareholder_url: "https://kaldalon.is/fjarfestar/"
+    fetch_type: static
+
+  - name: "Sýn hf."
+    ticker: SYN
+    sector: Telecoms
+    shareholder_url: "https://www.syn.is/fjarfestatengsl/staerstu-hluthafar"
   - name: "Sjóvá-Almennar tryggingar hf."
     ticker: SJOVA
     sector: Insurance

@@ -17,6 +17,7 @@
       {
         "name": "Birta lífeyrissjóður",
         "pct": 7.86
+        "pct": 7.86
       },
       {
         "name": "Almenni-Lífsverk lífeyrissjóður",
@@ -37,6 +38,10 @@
       {
         "name": "Stapi lífeyrissjóður",
         "pct": 2.56
+      },
+      {
+        "name": "Landsbankinn hf.",
+        "pct": 1.6
       },
       {
         "name": "Landsbankinn hf.",
