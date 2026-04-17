@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python main.py --company NOVA --dry-run)",
+      "Bash(python main.py --company SJOVA --dry-run)",
+      "Bash(python main.py --company KALD --dry-run)",
+      "Bash(python main.py --company KALD --debug-html kald.html --dry-run)",
+      "Bash(python main.py --company BERA --debug-html bera.html --dry-run)",
+      "Bash(python main.py --company EIM --debug-html eim.html --dry-run)",
+      "Bash(python main.py --company ISF --debug-html isf.html --dry-run)",
+      "Bash(wait)",
+      "Bash(python main.py --company SVN --debug-html svn.html --dry-run)",
+      "Bash(python main.py --company SKEL --debug-html skel.html --dry-run)"
+    ]
+  }
+}

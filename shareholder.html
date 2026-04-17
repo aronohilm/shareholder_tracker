@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shareholder Viewer</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --accent: #1d4ed8;
+      --accent-soft: #dbeafe;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+    }
+
+    .sub {
+      margin: 0 0 20px;
+      color: var(--muted);
+    }
+
+    .topbar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+
+    .search {
+      flex: 1 1 280px;
+      min-width: 220px;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--panel);
+      font-size: 14px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 20px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .panel-head {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      font-weight: 700;
+    }
+
+    .company-list {
+      max-height: 70vh;
+      overflow: auto;
+    }
+
+    .company-btn {
+      width: 100%;
+      text-align: left;
+      border: 0;
+      background: transparent;
+      padding: 14px 16px;
+      cursor: pointer;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .company-btn:hover {
+      background: #f9fafb;
+    }
+
+    .company-btn.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .content {
+      padding: 18px;
+    }
+
+    .company-title {
+      margin: 0 0 6px;
+      font-size: 24px;
+    }
+
+    .meta {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      font-size: 14px;
+    }
+
+    th {
+      background: #f9fafb;
+    }
+
+    td.pct {
+      text-align: right;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .empty,
+    .error {
+      padding: 28px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .error {
+      color: #b91c1c;
+    }
+
+    @media (max-width: 840px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .company-list {
+        max-height: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Shareholder Viewer</h1>
+    <p class="sub">Loads company shareholder data from <code>state.json</code>.</p>
+
+    <div class="topbar">
+      <input id="searchInput" class="search" type="text" placeholder="Search company name..." />
+    </div>
+
+    <div class="layout">
+      <div class="panel">
+        <div class="panel-head">Companies</div>
+        <div id="companyList" class="company-list"></div>
+      </div>
+
+      <div class="panel">
+        <div id="details" class="content">
+          <div class="empty">Select a company to view its shareholders.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let allCompanies = [];
+    let filteredCompanies = [];
+    let selectedTicker = null;
+
+    async function loadData() {
+      try {
+        const res = await fetch('./state.json');
+        if (!res.ok) {
+          throw new Error(`Could not load state.json (${res.status})`);
+        }
+
+        const data = await res.json();
+
+        allCompanies = Object.entries(data)
+          .map(([ticker, info]) => ({
+            ticker,
+            name: info.name || ticker,
+            shareholders: Array.isArray(info.shareholders) ? info.shareholders : [],
+            last_scan: info.last_scan || null,
+            total: info.total ?? (Array.isArray(info.shareholders) ? info.shareholders.length : 0)
+          }))
+          .sort((a, b) => a.name.localeCompare(b.name));
+
+        filteredCompanies = [...allCompanies];
+        renderCompanyList();
+
+        if (filteredCompanies.length > 0) {
+          selectCompany(filteredCompanies[0].ticker);
+        }
+      } catch (err) {
+        document.getElementById('companyList').innerHTML = `<div class="error">${err.message}</div>`;
+        document.getElementById('details').innerHTML = `<div class="error">${err.message}<br><br>Tip: open this through a local server, not directly as a file, so <code>fetch('./state.json')</code> works.</div>`;
+      }
+    }
+
+    function renderCompanyList() {
+      const list = document.getElementById('companyList');
+
+      if (filteredCompanies.length === 0) {
+        list.innerHTML = '<div class="empty">No companies found.</div>';
+        return;
+      }
+
+      list.innerHTML = filteredCompanies.map(company => `
+        <button class="company-btn ${company.ticker === selectedTicker ? 'active' : ''}" data-ticker="${company.ticker}">
+          <div>${company.name}</div>
+          <div style="margin-top:4px;color:#6b7280;font-size:12px;">${company.ticker}</div>
+        </button>
+      `).join('');
+
+      list.querySelectorAll('.company-btn').forEach(btn => {
+        btn.addEventListener('click', () => selectCompany(btn.dataset.ticker));
+      });
+    }
+
+    function selectCompany(ticker) {
+      selectedTicker = ticker;
+      renderCompanyList();
+
+      const company = allCompanies.find(c => c.ticker === ticker);
+      const details = document.getElementById('details');
+
+      if (!company) {
+        details.innerHTML = '<div class="empty">Company not found.</div>';
+        return;
+      }
+
+      const rows = company.shareholders.length
+        ? company.shareholders.map((holder, index) => `
+            <tr>
+              <td>${index + 1}</td>
+              <td>${escapeHtml(holder.name || '')}</td>
+              <td class="pct">${formatPct(holder.pct)}</td>
+            </tr>
+          `).join('')
+        : '<tr><td colspan="3" class="empty">No shareholder data available.</td></tr>';
+
+      details.innerHTML = `
+        <h2 class="company-title">${escapeHtml(company.name)}</h2>
+        <div class="meta">
+          Ticker: <strong>${company.ticker}</strong> &nbsp;•&nbsp;
+          Total shareholders shown: <strong>${company.total}</strong>
+          ${company.last_scan ? `&nbsp;•&nbsp; Last scan: <strong>${new Date(company.last_scan).toLocaleString()}</strong>` : ''}
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="width:70px;">#</th>
+              <th>Shareholder</th>
+              <th style="width:120px;text-align:right;">Ownership %</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows}
+          </tbody>
+        </table>
+      `;
+    }
+
+    function formatPct(value) {
+      if (typeof value !== 'number') return '-';
+      return `${value.toFixed(2)}%`;
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      const q = e.target.value.trim().toLowerCase();
+      filteredCompanies = allCompanies.filter(c => c.name.toLowerCase().includes(q) || c.ticker.toLowerCase().includes(q));
+
+      if (!filteredCompanies.some(c => c.ticker === selectedTicker)) {
+        selectedTicker = filteredCompanies[0]?.ticker ?? null;
+      }
+
+      renderCompanyList();
+      if (selectedTicker) {
+        selectCompany(selectedTicker);
+      } else {
+        document.getElementById('details').innerHTML = '<div class="empty">No companies match your search.</div>';
+      }
+    });
+
+    loadData();
+  </script>
+</body>
+</html>

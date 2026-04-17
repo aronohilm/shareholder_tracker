@@ -1,32 +1,176 @@
-# companies.yml
-# One entry per company.
-# shareholder_url: the page that lists top shareholders
-# fetch_type: static (most pages) or js (if 0 shareholders found, switch to js)
-# name_col / pct_col: column header keywords to find the right table columns
+# companies.yml — Shareholder Tracker
+# Updated after first test run on 2026-04-02
 
 companies:
 
-  - name: "Kaldalón hf."
-    ticker: KALD
-    sector: "Real Estate"
-    shareholder_url: "https://kaldalon.is/en/investors/?lang=en"
+  # ── Working perfectly ────────────────────────────────────────────────────
+
+  - name: "Arion banki hf."
+    ticker: ARION
+    sector: Banks
+    shareholder_url: "https://www.arionbanki.is/fjarfestaupplysingar/hlutabref/hluthafalisti"
     fetch_type: static
 
   - name: "Kvika banki hf."
     ticker: KVIKA
-    sector: "Banks"
+    sector: Banks
     shareholder_url: "https://kvika.is/fjarfestaupplysingar/?category=shareholderCatalog"
     fetch_type: static
 
-  - name: "Alvotech hf."
-    ticker: ALVO
-    sector: "Healthcare"
-    shareholder_url: "https://investors.alvotech.com/shareholders"
+  - name: "Sjóvá-Almennar tryggingar hf."
+    ticker: SJOVA
+    sector: Insurance
+    shareholder_url: "https://www.sjova.is/sjova/upplysingagjof/fjarfestar/hluthafalisti"
     fetch_type: static
 
-  # Add more companies here:
-  # - name: "Company hf."
-  #   ticker: TICKER
-  #   sector: "Sector"
-  #   shareholder_url: "https://..."
-  #   fetch_type: static
+  - name: "Síminn hf."
+    ticker: SIMINN
+    sector: Telecoms
+    shareholder_url: "https://www.siminn.is/fjarfestar/hluthafar-og-hlutabref"
+    fetch_type: static
+
+  - name: "Amaroq Minerals Ltd."
+    ticker: AMRQ
+    sector: Mining
+    shareholder_url: "https://www.amaroqminerals.com/investors/shareholders/"
+    fetch_type: js
+
+  # ── Getting numbers/ranks instead of names — fixed by scraper update ────
+  # These should work after scraper.py update
+
+  - name: "Brim hf."
+    ticker: BRIM
+    sector: Fisheries
+    shareholder_url: "https://www.brim.is/is/fjarfestar/hluthafaupplysingar"
+    fetch_type: static
+
+  - name: "Hagar hf."
+    ticker: HAGA
+    sector: Retail
+    shareholder_url: "https://www.hagar.is/fjarfestar/hluthafaupplysingar/hluthafalisti/"
+    fetch_type: static
+
+  - name: "Hampiðjan hf."
+    ticker: HAMP
+    sector: Fisheries
+    shareholder_url: "https://hampidjan.is/fjarmal/hluthafar/"
+    fetch_type: static
+
+  - name: "Kaldalón hf."
+    ticker: KALD
+    sector: "Real Estate"
+    shareholder_url: "https://kaldalon.is/fjarfestar/"
+    fetch_type: static
+
+  - name: "Sýn hf."
+    ticker: SYN
+    sector: Telecoms
+    shareholder_url: "https://www.syn.is/fjarfestatengsl/staerstu-hluthafar"
+    fetch_type: static
+
+  - name: "Nova hf."
+    ticker: NOVA
+    sector: Telecoms
+    shareholder_url: "https://www.nova.is/baksvids/hluthafar"
+    fetch_type: js
+
+  # ── Were static but got 0 results — switching to js ─────────────────────
+
+  - name: "Bera hf."
+    ticker: BERA
+    sector: "Food & Beverage"
+    shareholder_url: "https://www.olgerdin.is/fjarfestar/hluthafaupplysingar/"
+    fetch_type: js
+    wait_ms: 15000
+
+  - name: "Eik fasteignafélag hf."
+    ticker: EIK
+    sector: "Real Estate"
+    shareholder_url: "https://www.eik.is/hluthafar"
+    fetch_type: js
+
+  - name: "Eimskipafélag Íslands hf."
+    ticker: EIM
+    sector: Shipping
+    shareholder_url: "https://www.eimskip.com/investors/share-information/"
+    fetch_type: js
+
+  - name: "Festir hf."
+    ticker: FESTI
+    sector: Retail
+    shareholder_url: "https://www.festi.is/hluthafaupplysingar"
+    fetch_type: js
+
+  - name: "Heimar hf."
+    ticker: HEIMAR
+    sector: "Real Estate"
+    shareholder_url: "https://www.heimar.is/fjarfestar/adrar-upplysingar/staerstu-hluthafar/"
+    fetch_type: js
+
+  - name: "Ísfélagið hf."
+    ticker: ISF
+    sector: Fisheries
+    shareholder_url: "https://isfelag.is/fjarfestar/"
+    fetch_type: js
+    wait_ms: 15000
+
+  - name: "Íslandsbanki hf."
+    ticker: ISB
+    sector: Banks
+    shareholder_url: "https://www.islandsbanki.is/is/grein/hluthafar"
+    fetch_type: js
+
+  - name: "Reitir fasteignafélag hf."
+    ticker: REITIR
+    sector: "Real Estate"
+    shareholder_url: "https://www.reitir.is/fjarfestar/hluthafaupplysingar"
+    fetch_type: js
+
+  - name: "Skagi hf."
+    ticker: SKAGI
+    sector: Fisheries
+    shareholder_url: "https://skagi.is/hluthafar"
+    fetch_type: js
+
+  - name: "Skel fjárfestingafélag hf."
+    ticker: SKEL
+    sector: Investment
+    shareholder_url: "https://skel.is/hluthafar/staerstu-hluthafar"
+    fetch_type: js
+    wait_ms: 15000
+
+  - name: "Síldarvinnslan hf."
+    ticker: SVN
+    sector: Fisheries
+    shareholder_url: "https://svn.is/fjarfestar/"
+    fetch_type: js
+    wait_ms: 15000
+
+  # ── Special cases ────────────────────────────────────────────────────────
+
+  # - name: "Icelandair Group hf."
+  #   ticker: ICEAIR
+  #   sector: Aviation
+  #   shareholder_url: "https://www.icelandairgroup.com/investors/shares/shareholders"
+  #   fetch_type: js
+  #   # Getting share count ranges instead of names — scraper fix needed
+
+  # - name: "Iceland Seafood International hf."
+  #   ticker: ICESEA
+  #   sector: Fisheries
+  #   shareholder_url: "https://icelandseafood.com/investors/shareholders/"
+  #   fetch_type: js
+
+  # - name: "Alvotech hf."
+  #   ticker: ALVO
+  #   sector: Pharma
+  #   shareholder_url: "https://investors.alvotech.com/shareholders"
+  #   fetch_type: js
+
+  
+    # Timing out — may block scrapers, check manually
+
+  # ── TODO: no URL found yet ───────────────────────────────────────────────
+
+  # JBT-Marel (JBTM) — "Vantar" in your spreadsheet, skipping for now
+  # Oculis (OCS) — "fann ekki" in your spreadsheet, skipping for now

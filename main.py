@@ -40,18 +40,17 @@ def save_state(state: dict):
     )
 
 
-def scan_company(company: dict, state: dict) -> list[dict]:
+def scan_company(company: dict, state: dict, debug_html: str | None = None) -> list[dict]:
     ticker = company["ticker"]
     name = company["name"]
     url = company["shareholder_url"]
     fetch_type = company.get("fetch_type", "static")
+    wait_ms = company.get("wait_ms", 5000)
 
     log.info(f"Scanning: {name} ({ticker})")
 
-    current = get_shareholders(url, fetch_type)
+    current = get_shareholders(url, fetch_type, wait_ms=wait_ms, debug_html=debug_html)
 
-    #TESTING:
-    print("CURRENT:", current)
 
     if not current:
         log.warning(f"No shareholders found for {name} — skipping")
@@ -86,6 +85,7 @@ def main():
                         help="Scan but don't save state or send notifications")
     parser.add_argument("--company", help="Only scan this ticker")
     parser.add_argument("--output-json", help="Write changes to this JSON file")
+    parser.add_argument("--debug-html", help="Save raw fetched HTML to this file (use with --company)")
     args = parser.parse_args()
 
     config = yaml.safe_load(COMPANIES_FILE.read_text(encoding="utf-8"))
@@ -102,7 +102,7 @@ def main():
 
     for company in companies:
         try:
-            changes = scan_company(company, state)
+            changes = scan_company(company, state, debug_html=args.debug_html)
             all_changes.extend(changes)
         except Exception as e:
             log.error(f"Error scanning {company.get('name')}: {e}")

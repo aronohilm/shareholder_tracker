@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shareholder Tracker — Company Status</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, Arial, sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      padding: 32px 24px;
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 6px;
+      color: #1a2e1a;
+    }
+    .subtitle {
+      color: #888;
+      font-size: 13px;
+      margin-bottom: 28px;
+    }
+
+    .legend {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .company-name {
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .ticker {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #eef;
+      color: #336;
+      letter-spacing: 0.03em;
+    }
+    .sector {
+      font-size: 12px;
+      color: #999;
+    }
+    .status-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .badge.working   { background: #e6f4ea; color: #2e7d32; }
+    .badge.partial   { background: #fff8e1; color: #f57f17; }
+    .badge.numbers   { background: #fff3e0; color: #e65100; }
+    .badge.empty     { background: #fce4ec; color: #c62828; }
+
+    .issue {
+      font-size: 12px;
+      color: #777;
+      margin-top: 2px;
+    }
+    .fetch-type {
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: #f5f5f5;
+      color: #888;
+      margin-left: auto;
+    }
+
+    .summary-bar {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 14px 20px;
+    }
+    .summary-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+    .summary-stat .num {
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .summary-stat .label {
+      font-size: 11px;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .num.green  { color: #2e7d32; }
+    .num.orange { color: #f57f17; }
+    .num.red    { color: #c62828; }
+    .num.dark   { color: #333; }
+  </style>
+</head>
+<body>
+
+  <h1>📊 Shareholder Tracker — Company Status</h1>
+  <p class="subtitle">Last updated: 2026-04-17 (session 3)</p>
+
+  <div class="summary-bar">
+    <div class="summary-stat"><span class="num dark">22</span><span class="label">Total</span></div>
+    <div class="summary-stat"><span class="num green">22</span><span class="label">✅ Working</span></div>
+    <div class="summary-stat"><span class="num orange">0</span><span class="label">⚠️ Partial</span></div>
+    <div class="summary-stat"><span class="num" style="color:#e65100;">0</span><span class="label">🔢 Wrong names</span></div>
+    <div class="summary-stat"><span class="num red">0</span><span class="label">❌ Empty</span></div>
+  </div>
+
+  <div class="grid">
+
+    <!-- ✅ WORKING -->
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Arion banki hf.</span>
+        <span class="ticker">ARION</span>
+      </div>
+      <span class="sector">Banks</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">static</span>
+      </div>
+      <p class="issue">16 shareholders with correct names &amp; percentages.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Kvika banki hf.</span>
+        <span class="ticker">KVIKA</span>
+      </div>
+      <span class="sector">Banks</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">static</span>
+      </div>
+      <p class="issue">15 shareholders with correct names &amp; percentages.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Síminn hf.</span>
+        <span class="ticker">SIMINN</span>
+      </div>
+      <span class="sector">Telecoms</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">static</span>
+      </div>
+      <p class="issue">10 shareholders with correct names &amp; percentages.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Amaroq Minerals Ltd.</span>
+        <span class="ticker">AMRQ</span>
+      </div>
+      <span class="sector">Mining</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">js</span>
+      </div>
+      <p class="issue">7 shareholders with correct names &amp; percentages.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Íslandsbanki hf.</span>
+        <span class="ticker">ISB</span>
+      </div>
+      <span class="sector">Banks</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">js</span>
+      </div>
+      <p class="issue">14 shareholders with correct names &amp; percentages.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Skagi hf.</span>
+        <span class="ticker">SKAGI</span>
+      </div>
+      <span class="sector">Fisheries</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">js</span>
+      </div>
+      <p class="issue">20 shareholders with correct names &amp; percentages.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Hagar hf.</span>
+        <span class="ticker">HAGA</span>
+      </div>
+      <span class="sector">Retail</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">static</span>
+      </div>
+      <p class="issue">Fixed: "Eigandi" keyword added + parse_percentage decimal bug fixed. 20 shareholders correct.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Heimar hf.</span>
+        <span class="ticker">HEIMAR</span>
+      </div>
+      <span class="sector">Real Estate</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">js</span>
+      </div>
+      <p class="issue">Fixed: "Nafn" header keyword added. 20 shareholders with correct names.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Reitir fasteignafélag hf.</span>
+        <span class="ticker">REITIR</span>
+      </div>
+      <span class="sector">Real Estate</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">js</span>
+      </div>
+      <p class="issue">Fixed: "Nafn" keyword + stripped "Fjöldi hluta…" metadata suffix from name cells.</p>
+    </div>
+
+    <!-- ⚠️ PARTIAL -->
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Sjóvá-Almennar tryggingar hf.</span>
+        <span class="ticker">SJOVA</span>
+      </div>
+      <span class="sector">Insurance</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">static</span>
+      </div>
+      <p class="issue">Fixed: had_pct flag prevents 0.75% → 75% inflation. 20 shareholders correct.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Hampiðjan hf.</span>
+        <span class="ticker">HAMP</span>
+      </div>
+      <span class="sector">Fisheries</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">static</span>
+      </div>
+      <p class="issue">Fixed: "hluthafa" keyword + bad_prefix startswith filter removes summary rows. 21 shareholders correct.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Festir hf.</span>
+        <span class="ticker">FESTI</span>
+      </div>
+      <span class="sector">Retail</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">js</span>
+      </div>
+      <p class="issue">Fixed: "Nafn" keyword + bad_prefix filter removes "Samtals 20" row. 20 shareholders correct.</p>
+    </div>
+
+    <!-- 🔢 NUMBERS AS NAMES -->
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Brim hf.</span>
+        <span class="ticker">BRIM</span>
+      </div>
+      <span class="sector">Fisheries</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">static</span>
+      </div>
+      <p class="issue">Fixed: removed "eignarhlutur" from pct-header keywords so correct "hlutfall" column is used. 20 shareholders correct.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Kaldalón hf.</span>
+        <span class="ticker">KALD</span>
+      </div>
+      <span class="sector">Real Estate</span>
+      <div class="status-row">
+        <span class="badge numbers">🔢 Wrong names</span>
+        <span class="fetch-type">static</span>
+      </div>
+      <p class="issue">Text extractor uses percentage strings ("16,12%", "9,19%") as names — page has no proper table.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Sýn hf.</span>
+        <span class="ticker">SYN</span>
+      </div>
+      <span class="sector">Telecoms</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">static</span>
+      </div>
+      <p class="issue">Fixed: text extractor now skips share-count lines by looking back an extra line when previous line is all digits. 20 shareholders correct.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Nova hf.</span>
+        <span class="ticker">NOVA</span>
+      </div>
+      <span class="sector">Telecoms</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">js</span>
+      </div>
+      <p class="issue">Fixed: share-count skip + bad_prefixes filter in text extractor removes "Aðrir hluthafar". 13 shareholders correct.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Eik fasteignafélag hf.</span>
+        <span class="ticker">EIK</span>
+      </div>
+      <span class="sector">Real Estate</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">js</span>
+      </div>
+      <p class="issue">Fixed: pct_match.group(0) includes % sign so parse_percentage does not multiply 0.48% → 48%. 20 shareholders correct.</p>
+    </div>
+
+    <!-- ❌ EMPTY -->
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Bera hf.</span>
+        <span class="ticker">BERA</span>
+      </div>
+      <span class="sector">Food &amp; Beverage</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">js</span>
+      </div>
+      <p class="issue">Fixed: LMD widget API response intercepted via Playwright. 20 shareholders correct.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Eimskipafélag Íslands hf.</span>
+        <span class="ticker">EIM</span>
+      </div>
+      <span class="sector">Shipping</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">js</span>
+      </div>
+      <p class="issue">Fixed: LMD widget API response intercepted via Playwright. 20 shareholders correct.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Ísfélagið hf.</span>
+        <span class="ticker">ISF</span>
+      </div>
+      <span class="sector">Fisheries</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">js</span>
+      </div>
+      <p class="issue">Fixed: LMD widget API response intercepted via Playwright (wait_ms=15000). 20 shareholders correct.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Síldarvinnslan hf.</span>
+        <span class="ticker">SVN</span>
+      </div>
+      <span class="sector">Fisheries</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">js</span>
+      </div>
+      <p class="issue">Fixed: LMD widget API response intercepted via Playwright (wait_ms=15000). 20 shareholders correct.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="company-name">Skel fjárfestingafélag hf.</span>
+        <span class="ticker">SKEL</span>
+      </div>
+      <span class="sector">Investment</span>
+      <div class="status-row">
+        <span class="badge working">✅ Working</span>
+        <span class="fetch-type">js</span>
+      </div>
+      <p class="issue">Fixed: LMD widget API response intercepted via Playwright (wait_ms=15000). 20 shareholders correct.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
