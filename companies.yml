@@ -58,6 +58,7 @@ companies:
     sector: "Real Estate"
     shareholder_url: "https://kaldalon.is/fjarfestar/"
     fetch_type: js
+    wait_ms: 10000
 
   - name: "Sýn hf."
     ticker: SYN
