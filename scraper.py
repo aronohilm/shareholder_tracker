@@ -88,6 +88,7 @@ def fetch_js(url: str, wait_ms: int = 5000) -> str | None:
                 "button[data-cky-tag='accept-button']",
                 "button[aria-label='Accept All']",
                 "button[id*='accept']",
+                "button.accept-all",           # Yahoo Finance GDPR wall
             ]
             for sel in consent_selectors:
                 try:
@@ -95,7 +96,10 @@ def fetch_js(url: str, wait_ms: int = 5000) -> str | None:
                     if btn and btn.is_visible():
                         btn.click()
                         log.info(f"Clicked consent button: {sel}")
-                        page.wait_for_timeout(3000)
+                        try:
+                            page.wait_for_load_state("networkidle", timeout=15000)
+                        except Exception:
+                            page.wait_for_timeout(5000)
                         break
                 except Exception:
                     pass
@@ -202,6 +206,8 @@ def extract_from_table(soup: BeautifulSoup) -> list[dict]:
                 "name",
                 "eigandi",
                 "nafn",
+                "owner",
+                "holder",
             ])
 
         def pct_priority(h: str) -> int:

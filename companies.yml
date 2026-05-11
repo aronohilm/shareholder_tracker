@@ -57,7 +57,7 @@ companies:
     ticker: KALD
     sector: "Real Estate"
     shareholder_url: "https://kaldalon.is/fjarfestar/"
-    fetch_type: static
+    fetch_type: js
 
   - name: "Sýn hf."
     ticker: SYN
@@ -150,19 +150,31 @@ companies:
   #   fetch_type: js
   #   # Getting share count ranges instead of names — scraper fix needed
 
-  # - name: "Iceland Seafood International hf."
-  #   ticker: ICESEA
-  #   sector: Fisheries
-  #   shareholder_url: "https://icelandseafood.com/investors/shareholders/"
-  #   fetch_type: js
+  - name: "Iceland Seafood International hf."
+    ticker: ICESEA
+    sector: Fisheries
+    shareholder_url: "https://icelandseafood.com/investors/shareholders/"
+    fetch_type: js
 
-  # - name: "Alvotech hf."
-  #   ticker: ALVO
-  #   sector: Pharma
-  #   shareholder_url: "https://investors.alvotech.com/shareholders"
-  #   fetch_type: js
+  - name: "Alvotech hf."
+    ticker: ALVO
+    sector: Pharma
+    shareholder_url: "https://keldan.is/Markadir/Hlutabref/ALVO"
+    fetch_type: js
+    wait_ms: 10000
 
   # ── TODO: no URL found yet ───────────────────────────────────────────────
 
-  # JBT-Marel (JBTM) — "Vantar" in your spreadsheet, skipping for now
-  # Oculis (OCS) — "fann ekki" in your spreadsheet, skipping for now
+  - name: "JBT Marel Corporation"
+    ticker: JBTM
+    sector: "Food Technology"
+    shareholder_url: "https://finance.yahoo.com/quote/JBTM/holders/"
+    fetch_type: js
+    wait_ms: 10000
+  # Oculis (OCS) — Swiss/NASDAQ; no Iceland registry data, using Yahoo Finance institutional holders
+  - name: "Oculis Holding AG"
+    ticker: OCS
+    sector: Pharma
+    shareholder_url: "https://finance.yahoo.com/quote/OCS/holders/"
+    fetch_type: js
+    wait_ms: 10000
