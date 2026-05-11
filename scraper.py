@@ -18,9 +18,9 @@ HEADERS = {
 }
 
 
-def fetch_page(url: str, fetch_type: str = "static", wait_ms: int = 5000) -> str | None:
+def fetch_page(url: str, fetch_type: str = "static", wait_ms: int = 5000, click_selector: str | None = None) -> str | None:
     if fetch_type == "js":
-        return fetch_js(url, wait_ms=wait_ms)
+        return fetch_js(url, wait_ms=wait_ms, click_selector=click_selector)
     for attempt in range(3):
         try:
             resp = requests.get(url, headers=HEADERS, timeout=20)
@@ -33,7 +33,7 @@ def fetch_page(url: str, fetch_type: str = "static", wait_ms: int = 5000) -> str
     return None
 
 
-def fetch_js(url: str, wait_ms: int = 5000) -> str | None:
+def fetch_js(url: str, wait_ms: int = 5000, click_selector: str | None = None) -> str | None:
     try:
         from playwright.sync_api import sync_playwright
 
@@ -79,7 +79,12 @@ def fetch_js(url: str, wait_ms: int = 5000) -> str | None:
             page.on("response", _on_response)
 
             page.goto(url, wait_until="domcontentloaded", timeout=60000)
-            page.wait_for_timeout(wait_ms)
+            # Wait for networkidle first (catches in-flight AJAX like JetEngine listings),
+            # then fall back to a hard timeout if the page stays busy.
+            try:
+                page.wait_for_load_state("networkidle", timeout=wait_ms)
+            except Exception:
+                page.wait_for_timeout(3000)
 
             # Dismiss cookie consent dialogs if present
             consent_selectors = [
@@ -103,6 +108,21 @@ def fetch_js(url: str, wait_ms: int = 5000) -> str | None:
                         break
                 except Exception:
                     pass
+
+            # Click a tab/button to reveal dynamic content (e.g. "Shareholders list" tab)
+            if click_selector:
+                try:
+                    page.click(click_selector, timeout=10000)
+                    log.info(f"Clicked selector: {click_selector!r}")
+                    # Tab switches are often client-side — give the DOM time to update
+                    # before checking networkidle (which fires immediately for pure JS tabs)
+                    page.wait_for_timeout(3000)
+                    try:
+                        page.wait_for_load_state("networkidle", timeout=10000)
+                    except Exception:
+                        pass
+                except Exception as e:
+                    log.warning(f"Could not click {click_selector!r}: {e}")
 
             # If LMD API responses were captured, encode them into a synthetic HTML
             # that extract_from_table / extract_from_text can later find via
@@ -226,6 +246,20 @@ def extract_from_table(soup: BeautifulSoup) -> list[dict]:
         # Fallback only if headers are really unclear
         if name_idx is None:
             name_idx = 0
+        if pct_idx is None:
+            # Auto-detect: find first column (excluding name) whose data cells look like percentages
+            pct_pattern = re.compile(r'^\d{1,3}[.,]\d{1,4}%$')
+            for col_idx in range(len(headers)):
+                if col_idx == name_idx:
+                    continue
+                samples = []
+                for row in rows[1:4]:
+                    cells = row.find_all(["td", "th"])
+                    if col_idx < len(cells):
+                        samples.append(cells[col_idx].get_text(strip=True))
+                if samples and sum(1 for v in samples if pct_pattern.match(v)) >= min(2, len(samples)):
+                    pct_idx = col_idx
+                    break
         if pct_idx is None:
             pct_idx = -1
 
@@ -375,12 +409,12 @@ def extract_from_two_column_list(soup: BeautifulSoup) -> list[dict]:
     return []
 
 
-def get_shareholders(url: str, fetch_type: str = "static", wait_ms: int = 5000, debug_html: str | None = None) -> list[dict]:
+def get_shareholders(url: str, fetch_type: str = "static", wait_ms: int = 5000, debug_html: str | None = None, click_selector: str | None = None) -> list[dict]:
     """
     Main function: fetch page and extract shareholders.
     Returns list of {"name": str, "pct": float} sorted by pct desc.
     """
-    html = fetch_page(url, fetch_type, wait_ms=wait_ms)
+    html = fetch_page(url, fetch_type, wait_ms=wait_ms, click_selector=click_selector)
     if not html:
         log.error(f"Could not fetch {url}")
         return []

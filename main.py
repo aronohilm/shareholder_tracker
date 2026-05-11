@@ -4,6 +4,7 @@ main.py — Entry point. Scans all companies, detects changes, sends notificatio
 
 import json
 import logging
+import os
 import time
 import sys
 import argparse
@@ -46,10 +47,11 @@ def scan_company(company: dict, state: dict, debug_html: str | None = None) -> l
     url = company["shareholder_url"]
     fetch_type = company.get("fetch_type", "static")
     wait_ms = company.get("wait_ms", 5000)
+    click_selector = company.get("click_selector")
 
     log.info(f"Scanning: {name} ({ticker})")
 
-    current = get_shareholders(url, fetch_type, wait_ms=wait_ms, debug_html=debug_html)
+    current = get_shareholders(url, fetch_type, wait_ms=wait_ms, debug_html=debug_html, click_selector=click_selector)
 
 
     if not current:
@@ -100,9 +102,15 @@ def main():
     state = load_state()
     all_changes = []
 
+    # On CI, automatically save debug HTML for JS-fetched companies so failures are diagnosable
+    ci_debug = os.environ.get("CI") == "true"
+
     for company in companies:
         try:
-            changes = scan_company(company, state, debug_html=args.debug_html)
+            debug_html = args.debug_html
+            if debug_html is None and ci_debug and company.get("fetch_type") == "js":
+                debug_html = f"{company['ticker'].lower()}_debug.html"
+            changes = scan_company(company, state, debug_html=debug_html)
             all_changes.extend(changes)
         except Exception as e:
             log.error(f"Error scanning {company.get('name')}: {e}")

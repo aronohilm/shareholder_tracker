@@ -58,7 +58,7 @@ companies:
     sector: "Real Estate"
     shareholder_url: "https://kaldalon.is/fjarfestar/"
     fetch_type: js
-    wait_ms: 10000
+    wait_ms: 20000
 
   - name: "Sýn hf."
     ticker: SYN
@@ -144,12 +144,13 @@ companies:
 
   # ── Special cases ────────────────────────────────────────────────────────
 
-  # - name: "Icelandair Group hf."
-  #   ticker: ICEAIR
-  #   sector: Aviation
-  #   shareholder_url: "https://www.icelandairgroup.com/investors/shares/shareholders"
-  #   fetch_type: js
-  #   # Getting share count ranges instead of names — scraper fix needed
+  - name: "Icelandair Group hf."
+    ticker: ICEAIR
+    sector: Aviation
+    shareholder_url: "https://www.icelandairgroup.com/investors"
+    fetch_type: js
+    wait_ms: 15000
+    click_selector: "text=Shareholders list"
 
   - name: "Iceland Seafood International hf."
     ticker: ICESEA
