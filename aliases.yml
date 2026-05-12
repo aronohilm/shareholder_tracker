@@ -1,0 +1,99 @@
+# aliases.yml — Maps name variants to a single canonical entity name.
+# The HTML viewer uses this to group holdings across companies.
+# Add aliases whenever the same institution appears under multiple spellings.
+
+entities:
+
+  # ── Kvika banki ─────────────────────────────────────────────────────────────
+  - canonical: "Kvika banki hf."
+    aliases:
+      - "Kvika Banki - Safnreikningur"
+      - "Kvika - Innlend hlutabréf"
+      - "Kvika - IHF hs."
+      - "Kvika"
+
+  # ── Pension funds ────────────────────────────────────────────────────────────
+  - canonical: "Gildi lífeyrissjóður"
+    aliases:
+      - "Gildi - lífeyrissjóður"
+      - "Gildi Pension Fund"
+      - "Gildi - Lifeyrissjodur"
+      - "Gildi-lífeyrissjóður"
+
+
+
+  - canonical: "Almenni-Lífsverk lífeyrissjóður"
+    aliases:
+      - "Almenni - Lífsverk lífeyrissjóður"
+      - "Almenni-Lífsverk Pension Fund"
+
+  - canonical: "Brú lífeyrissjóður"
+    aliases:
+      - "Brú Lífeyrissjóður starfs sveit"
+      - "Brú R deild"
+      - "Brú Pension Fund"
+
+  - canonical: "Birta lífeyrissjóður"
+    aliases:
+      - "Birta Pension Fund"
+
+  - canonical: "Stapi lífeyrissjóður"
+    aliases:
+      - "Stapi Pension Fund"
+
+  - canonical: "Frjálsi lífeyrissjóðurinn"
+    aliases:
+      - "Frjálsi Pension Fund"
+      - "Frjálsi lífeyrissjóður"
+
+
+  - canonical: "Festa lífeyrissjóður"
+    aliases:
+      - "Festa - lífeyrissjóður"
+      - "Festa Pension Fund"
+
+  - canonical: "Lífeyrissjóður verzlunarmanna"
+    aliases:
+      - "Lífeyrssjóður verzlunarmanna"   # typo variant found in some sources
+
+  - canonical: "Lífeyrissj.starfsm.rík. A-deild"
+    aliases:
+      - "Lífeyrissjóður starfsmanna ríkisins A-deild"
+      - "LSR Pension Fund"
+
+  - canonical: "Lífeyrissj.starfsm.rík. B-deild"
+    aliases:
+      - "Lífeyrissjóður starfsmanna ríkisins B-deild"
+
+  # ── Vanguard ─────────────────────────────────────────────────────────────────
+  - canonical: "Vanguard"
+    aliases:
+      - "The Vanguard Group Inc."
+      - "Vanguard Total International S"
+      - "Vanguard Emerging Markets Stock"
+      - "Vanguard Fiduciary Trust Compa"
+      - "Vanguard Portfolio Management LLC"
+      - "Vanguard Capital Management LLC"
+
+  # ── Stefnir hf. (Íslandsbanki fund manager) ─────────────────────────────────
+  - canonical: "Stefnir hf."
+    aliases:
+      - "Stefnir"
+      - "Stefnir hf"
+      - "Stefnir Funds"
+      - "Stefnir - Innlend hlutabréf hs."
+      - "Stefnir – Innlend hlutabréf hs."   # em-dash variant
+      - "Stefnir - Innlend hlutabréf"
+      - "Stefnir - ÍS 5 hs."
+
+  # ── Landsbréf hf. (Landsbanki fund manager) ─────────────────────────────────
+  - canonical: "Landsbréf hf."
+    aliases:
+      - "Landsbréf - Úrvalsbréf hs."
+      - "Landsbréf - Hekla hs."
+      - "Landsbréf - Öndvegisbréf hs."
+
+  # ── Name inconsistencies (trailing punctuation, etc.) ────────────────────────
+  - canonical: "Sjóvá-Almennar tryggingar hf."
+    aliases:
+      - "Sjóvá-Almennar tryggingar hf"

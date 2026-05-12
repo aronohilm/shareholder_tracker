@@ -26,6 +26,22 @@ log = logging.getLogger(__name__)
 
 STATE_FILE = Path(__file__).parent / "state.json"
 COMPANIES_FILE = Path(__file__).parent / "companies.yml"
+ALIASES_YML = Path(__file__).parent / "aliases.yml"
+ALIASES_JSON = Path(__file__).parent / "aliases.json"
+
+
+def export_aliases_json():
+    """Convert aliases.yml → aliases.json so the HTML viewer can load it."""
+    if not ALIASES_YML.exists():
+        return
+    config = yaml.safe_load(ALIASES_YML.read_text(encoding="utf-8"))
+    result = {
+        e["canonical"]: e.get("aliases", [])
+        for e in config.get("entities", [])
+        if e.get("canonical")
+    }
+    ALIASES_JSON.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
+    log.info(f"Exported aliases.json ({len(result)} entities)")
 
 
 def load_state() -> dict:
@@ -89,6 +105,8 @@ def main():
     parser.add_argument("--output-json", help="Write changes to this JSON file")
     parser.add_argument("--debug-html", help="Save raw fetched HTML to this file (use with --company)")
     args = parser.parse_args()
+
+    export_aliases_json()
 
     config = yaml.safe_load(COMPANIES_FILE.read_text(encoding="utf-8"))
     companies = config.get("companies", [])

@@ -40,6 +40,35 @@
       color: var(--muted);
     }
 
+    /* ── Tabs ── */
+    .tabs {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .tab-btn {
+      padding: 10px 20px;
+      border: none;
+      background: transparent;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+    }
+
+    .tab-btn.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── Search bar ── */
     .topbar {
       display: flex;
       gap: 12px;
@@ -58,6 +87,7 @@
       font-size: 14px;
     }
 
+    /* ── Two-column layout ── */
     .layout {
       display: grid;
       grid-template-columns: 280px 1fr;
@@ -77,12 +107,12 @@
       font-weight: 700;
     }
 
-    .company-list {
+    .item-list {
       max-height: 70vh;
       overflow: auto;
     }
 
-    .company-btn {
+    .item-btn {
       width: 100%;
       text-align: left;
       border: 0;
@@ -94,21 +124,18 @@
       color: var(--text);
     }
 
-    .company-btn:hover {
-      background: #f9fafb;
-    }
+    .item-btn:hover { background: #f9fafb; }
 
-    .company-btn.active {
+    .item-btn.active {
       background: var(--accent-soft);
       color: var(--accent);
       font-weight: 700;
     }
 
-    .content {
-      padding: 18px;
-    }
+    /* ── Detail pane ── */
+    .content { padding: 18px; }
 
-    .company-title {
+    .detail-title {
       margin: 0 0 6px;
       font-size: 24px;
     }
@@ -119,6 +146,17 @@
       font-size: 14px;
     }
 
+    .alias-note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 12px;
+    }
+
+    /* ── Table ── */
     table {
       width: 100%;
       border-collapse: collapse;
@@ -131,9 +169,7 @@
       font-size: 14px;
     }
 
-    th {
-      background: #f9fafb;
-    }
+    th { background: #f9fafb; }
 
     td.pct {
       text-align: right;
@@ -141,105 +177,181 @@
       font-variant-numeric: tabular-nums;
     }
 
-    .empty,
-    .error {
+    tr.total-row td {
+      font-weight: 700;
+      background: #f0f4ff;
+      border-top: 2px solid var(--border);
+    }
+
+    td.alias-name {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .empty, .error {
       padding: 28px;
       color: var(--muted);
       text-align: center;
     }
 
-    .error {
-      color: #b91c1c;
-    }
+    .error { color: #b91c1c; }
 
     @media (max-width: 840px) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
-
-      .company-list {
-        max-height: 280px;
-      }
+      .layout { grid-template-columns: 1fr; }
+      .item-list { max-height: 280px; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <h1>Shareholder Viewer</h1>
-    <p class="sub">Loads company shareholder data from <code>state.json</code>.</p>
+    <p class="sub">Loads from <code>state.json</code> and <code>aliases.json</code>.</p>
 
-    <div class="topbar">
-      <input id="searchInput" class="search" type="text" placeholder="Search company name..." />
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="byCompany">By Company</button>
+      <button class="tab-btn" data-tab="byShareholder">By Shareholder</button>
     </div>
 
-    <div class="layout">
-      <div class="panel">
-        <div class="panel-head">Companies</div>
-        <div id="companyList" class="company-list"></div>
+    <!-- ── By Company ── -->
+    <div id="byCompany" class="tab-panel active">
+      <div class="topbar">
+        <input id="companySearch" class="search" type="text" placeholder="Search company name or ticker…" />
       </div>
+      <div class="layout">
+        <div class="panel">
+          <div class="panel-head">Companies</div>
+          <div id="companyList" class="item-list"></div>
+        </div>
+        <div class="panel">
+          <div id="companyDetails" class="content">
+            <div class="empty">Select a company to view its shareholders.</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <div class="panel">
-        <div id="details" class="content">
-          <div class="empty">Select a company to view its shareholders.</div>
+    <!-- ── By Shareholder ── -->
+    <div id="byShareholder" class="tab-panel">
+      <div class="topbar">
+        <input id="holderSearch" class="search" type="text" placeholder="Search shareholder name…" />
+      </div>
+      <div class="layout">
+        <div class="panel">
+          <div class="panel-head">Shareholders</div>
+          <div id="holderList" class="item-list"></div>
+        </div>
+        <div class="panel">
+          <div id="holderDetails" class="content">
+            <div class="empty">Select a shareholder to view their holdings.</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <script>
+    // ── State ────────────────────────────────────────────────────────────────
     let allCompanies = [];
     let filteredCompanies = [];
     let selectedTicker = null;
 
+    let allHolders = [];       // [{name, holdings, total}]
+    let filteredHolders = [];
+    let selectedHolder = null;
+
+    // ── Data loading ─────────────────────────────────────────────────────────
     async function loadData() {
       try {
-        const res = await fetch('./state.json');
-        if (!res.ok) {
-          throw new Error(`Could not load state.json (${res.status})`);
+        const [stateRes, aliasRes] = await Promise.all([
+          fetch('./state.json'),
+          fetch('./aliases.json').catch(() => null),
+        ]);
+
+        if (!stateRes.ok) throw new Error(`Could not load state.json (${stateRes.status})`);
+        const state = await stateRes.json();
+
+        // aliases.json: { "canonical": ["alias1", ...], ... }
+        let aliasConfig = {};
+        if (aliasRes && aliasRes.ok) {
+          aliasConfig = await aliasRes.json();
         }
 
-        const data = await res.json();
+        // Reverse lookup: any name variant → canonical name
+        const toCanonical = {};
+        for (const [canonical, aliases] of Object.entries(aliasConfig)) {
+          toCanonical[canonical] = canonical;
+          for (const alias of aliases) {
+            toCanonical[alias] = canonical;
+          }
+        }
 
-        allCompanies = Object.entries(data)
+        // ── By Company data ──────────────────────────────────────────────────
+        allCompanies = Object.entries(state)
           .map(([ticker, info]) => ({
             ticker,
             name: info.name || ticker,
             shareholders: Array.isArray(info.shareholders) ? info.shareholders : [],
             last_scan: info.last_scan || null,
-            total: info.total ?? (Array.isArray(info.shareholders) ? info.shareholders.length : 0)
+            total: info.total ?? (Array.isArray(info.shareholders) ? info.shareholders.length : 0),
           }))
           .sort((a, b) => a.name.localeCompare(b.name));
 
         filteredCompanies = [...allCompanies];
         renderCompanyList();
+        if (filteredCompanies.length > 0) selectCompany(filteredCompanies[0].ticker);
 
-        if (filteredCompanies.length > 0) {
-          selectCompany(filteredCompanies[0].ticker);
+        // ── By Shareholder data ──────────────────────────────────────────────
+        // Build: canonicalName → [{ticker, companyName, accountName, pct}]
+        const holderMap = {};
+        for (const [ticker, info] of Object.entries(state)) {
+          for (const sh of info.shareholders || []) {
+            const canonical = toCanonical[sh.name] || sh.name;
+            if (!holderMap[canonical]) holderMap[canonical] = [];
+            holderMap[canonical].push({
+              ticker,
+              companyName: info.name || ticker,
+              accountName: sh.name,
+              pct: sh.pct,
+            });
+          }
         }
+
+        allHolders = Object.entries(holderMap)
+          .map(([name, holdings]) => ({
+            name,
+            holdings: holdings.sort((a, b) => b.pct - a.pct),
+            total: holdings.reduce((s, h) => s + h.pct, 0),
+          }))
+          .sort((a, b) => b.total - a.total);
+
+        filteredHolders = [...allHolders];
+        renderHolderList();
+
       } catch (err) {
-        document.getElementById('companyList').innerHTML = `<div class="error">${err.message}</div>`;
-        document.getElementById('details').innerHTML = `<div class="error">${err.message}<br><br>Tip: open this through a local server, not directly as a file, so <code>fetch('./state.json')</code> works.</div>`;
+        const msg = `<div class="error">${escapeHtml(err.message)}</div>`;
+        document.getElementById('companyList').innerHTML = msg;
+        document.getElementById('companyDetails').innerHTML = msg;
+        document.getElementById('holderList').innerHTML = msg;
+        document.getElementById('holderDetails').innerHTML = msg;
       }
     }
 
+    // ── By Company ───────────────────────────────────────────────────────────
     function renderCompanyList() {
       const list = document.getElementById('companyList');
-
-      if (filteredCompanies.length === 0) {
+      if (!filteredCompanies.length) {
         list.innerHTML = '<div class="empty">No companies found.</div>';
         return;
       }
-
-      list.innerHTML = filteredCompanies.map(company => `
-        <button class="company-btn ${company.ticker === selectedTicker ? 'active' : ''}" data-ticker="${company.ticker}">
-          <div>${company.name}</div>
-          <div style="margin-top:4px;color:#6b7280;font-size:12px;">${company.ticker}</div>
+      list.innerHTML = filteredCompanies.map(c => `
+        <button class="item-btn ${c.ticker === selectedTicker ? 'active' : ''}" data-ticker="${c.ticker}">
+          <div>${escapeHtml(c.name)}</div>
+          <div style="margin-top:4px;color:#6b7280;font-size:12px;">${c.ticker}</div>
         </button>
       `).join('');
-
-      list.querySelectorAll('.company-btn').forEach(btn => {
-        btn.addEventListener('click', () => selectCompany(btn.dataset.ticker));
-      });
+      list.querySelectorAll('.item-btn').forEach(btn =>
+        btn.addEventListener('click', () => selectCompany(btn.dataset.ticker))
+      );
     }
 
     function selectCompany(ticker) {
@@ -247,46 +359,137 @@
       renderCompanyList();
 
       const company = allCompanies.find(c => c.ticker === ticker);
-      const details = document.getElementById('details');
-
-      if (!company) {
-        details.innerHTML = '<div class="empty">Company not found.</div>';
-        return;
-      }
+      const details = document.getElementById('companyDetails');
+      if (!company) { details.innerHTML = '<div class="empty">Company not found.</div>'; return; }
 
       const rows = company.shareholders.length
-        ? company.shareholders.map((holder, index) => `
+        ? company.shareholders.map((h, i) => `
             <tr>
-              <td>${index + 1}</td>
-              <td>${escapeHtml(holder.name || '')}</td>
-              <td class="pct">${formatPct(holder.pct)}</td>
-            </tr>
-          `).join('')
+              <td>${i + 1}</td>
+              <td>${escapeHtml(h.name || '')}</td>
+              <td class="pct">${formatPct(h.pct)}</td>
+            </tr>`).join('')
         : '<tr><td colspan="3" class="empty">No shareholder data available.</td></tr>';
 
       details.innerHTML = `
-        <h2 class="company-title">${escapeHtml(company.name)}</h2>
+        <h2 class="detail-title">${escapeHtml(company.name)}</h2>
         <div class="meta">
           Ticker: <strong>${company.ticker}</strong> &nbsp;•&nbsp;
-          Total shareholders shown: <strong>${company.total}</strong>
+          Shareholders shown: <strong>${company.total}</strong>
           ${company.last_scan ? `&nbsp;•&nbsp; Last scan: <strong>${new Date(company.last_scan).toLocaleString()}</strong>` : ''}
         </div>
+        <table>
+          <thead><tr><th style="width:50px;">#</th><th>Shareholder</th><th style="width:120px;text-align:right;">Ownership %</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>`;
+    }
 
+    document.getElementById('companySearch').addEventListener('input', e => {
+      const q = e.target.value.trim().toLowerCase();
+      filteredCompanies = allCompanies.filter(c =>
+        c.name.toLowerCase().includes(q) || c.ticker.toLowerCase().includes(q)
+      );
+      if (!filteredCompanies.some(c => c.ticker === selectedTicker))
+        selectedTicker = filteredCompanies[0]?.ticker ?? null;
+      renderCompanyList();
+      if (selectedTicker) selectCompany(selectedTicker);
+      else document.getElementById('companyDetails').innerHTML = '<div class="empty">No companies match your search.</div>';
+    });
+
+    // ── By Shareholder ────────────────────────────────────────────────────────
+    function renderHolderList() {
+      const list = document.getElementById('holderList');
+      if (!filteredHolders.length) {
+        list.innerHTML = '<div class="empty">No shareholders found.</div>';
+        return;
+      }
+      list.innerHTML = filteredHolders.map(h => `
+        <button class="item-btn ${h.name === selectedHolder ? 'active' : ''}" data-name="${escapeAttr(h.name)}">
+          <div>${escapeHtml(h.name)}</div>
+          <div style="margin-top:4px;color:#6b7280;font-size:12px;">${h.holdings.length} ${h.holdings.length !== 1 ? 'companies' : 'company'} &nbsp;•&nbsp; ${formatPct(h.total)} total</div>
+        </button>
+      `).join('');
+      list.querySelectorAll('.item-btn').forEach(btn =>
+        btn.addEventListener('click', () => selectHolder(btn.dataset.name))
+      );
+    }
+
+    function selectHolder(name) {
+      selectedHolder = name;
+      renderHolderList();
+
+      const holder = allHolders.find(h => h.name === name);
+      const details = document.getElementById('holderDetails');
+      if (!holder) { details.innerHTML = '<div class="empty">Not found.</div>'; return; }
+
+      // Collect alias names that differ from canonical
+      const aliases = [...new Set(holder.holdings.map(h => h.accountName).filter(n => n !== name))];
+
+      const aliasNote = aliases.length
+        ? `<div class="alias-note">Also listed as: ${aliases.map(escapeHtml).join(' &nbsp;/&nbsp; ')}</div>`
+        : '';
+
+      const rows = holder.holdings.map(h => {
+        const isDiff = h.accountName !== name;
+        return `
+          <tr>
+            <td>${escapeHtml(h.companyName)}</td>
+            <td style="color:#888;font-size:12px;">${h.ticker}</td>
+            ${isDiff ? `<td class="alias-name">${escapeHtml(h.accountName)}</td>` : `<td></td>`}
+            <td class="pct">${formatPct(h.pct)}</td>
+          </tr>`;
+      }).join('');
+
+      const totalRow = holder.holdings.length > 1 ? `
+        <tr class="total-row">
+          <td colspan="3">Total across ${holder.holdings.length} companies</td>
+          <td class="pct">${formatPct(holder.total)}</td>
+        </tr>` : '';
+
+      details.innerHTML = `
+        <h2 class="detail-title">${escapeHtml(name)}</h2>
+        <div class="meta">Appears in <strong>${holder.holdings.length}</strong> company holdings list${holder.holdings.length !== 1 ? 's' : ''}</div>
+        ${aliasNote}
         <table>
           <thead>
             <tr>
-              <th style="width:70px;">#</th>
-              <th>Shareholder</th>
+              <th>Company</th>
+              <th style="width:70px;">Ticker</th>
+              <th>Listed as</th>
               <th style="width:120px;text-align:right;">Ownership %</th>
             </tr>
           </thead>
           <tbody>
             ${rows}
+            ${totalRow}
           </tbody>
-        </table>
-      `;
+        </table>`;
     }
 
+    document.getElementById('holderSearch').addEventListener('input', e => {
+      const q = e.target.value.trim().toLowerCase();
+      filteredHolders = allHolders.filter(h =>
+        h.name.toLowerCase().includes(q) ||
+        h.holdings.some(holding => holding.accountName.toLowerCase().includes(q))
+      );
+      if (!filteredHolders.some(h => h.name === selectedHolder))
+        selectedHolder = filteredHolders[0]?.name ?? null;
+      renderHolderList();
+      if (selectedHolder) selectHolder(selectedHolder);
+      else document.getElementById('holderDetails').innerHTML = '<div class="empty">No shareholders match your search.</div>';
+    });
+
+    // ── Tabs ─────────────────────────────────────────────────────────────────
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    // ── Helpers ───────────────────────────────────────────────────────────────
     function formatPct(value) {
       if (typeof value !== 'number') return '-';
       return `${value.toFixed(2)}%`;
@@ -294,28 +497,13 @@
 
     function escapeHtml(str) {
       return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;').replace(/'/g, '&#039;');
     }
 
-    document.getElementById('searchInput').addEventListener('input', (e) => {
-      const q = e.target.value.trim().toLowerCase();
-      filteredCompanies = allCompanies.filter(c => c.name.toLowerCase().includes(q) || c.ticker.toLowerCase().includes(q));
-
-      if (!filteredCompanies.some(c => c.ticker === selectedTicker)) {
-        selectedTicker = filteredCompanies[0]?.ticker ?? null;
-      }
-
-      renderCompanyList();
-      if (selectedTicker) {
-        selectCompany(selectedTicker);
-      } else {
-        document.getElementById('details').innerHTML = '<div class="empty">No companies match your search.</div>';
-      }
-    });
+    function escapeAttr(str) {
+      return String(str).replace(/"/g, '&quot;');
+    }
 
     loadData();
   </script>
