@@ -32,6 +32,13 @@ python main.py --company KALD --debug-html kald_debug.html
 
 # Write all detected changes to JSON
 python main.py --output-json changes.json && python summarize.py
+
+# Local viewer — serves shareholder.html at http://localhost:8765/shareholder.html
+# Watches aliases.yml and rebuilds aliases.json automatically on save
+python dev_server.py
+
+# Stop the dev server
+lsof -ti :8765 | xargs kill
 ```
 
 ## Architecture
@@ -61,9 +68,33 @@ companies.yml → scraper.py → detector.py → notify.py
 
 **`state.json`** — Committed to the repo after each CI run. Keyed by ticker; stores `shareholders` list, `last_scan` timestamp, and `total` count. First scan for a new company produces no changes (no baseline).
 
+**`aliases.yml`** — Manually maintained. Maps canonical entity names to name variants found in scraped data (e.g. different fund account names for the same institution). `main.py` converts this to `aliases.json` on every run. `aliases.json` is committed by CI alongside `state.json`. Never edit `aliases.json` directly.
+
+**`shareholder.html`** — Static single-page viewer. Fetches `state.json` and `aliases.json` via `fetch()` — must be served over HTTP, not opened as a file. Has two tabs:
+- **By Company** — pick a company, see its shareholder list
+- **By Shareholder** — pick an investor, see all companies they appear in; aliases are merged under the canonical name with a "Also listed as" note and a total row
+
+**`dev_server.py`** — Local development only. Combines a Python HTTP server with a file watcher that rebuilds `aliases.json` within 1 second of saving `aliases.yml`.
+
 ## Adding a new company
 
 Add an entry to `companies.yml`. Minimal required fields: `name`, `ticker`, `shareholder_url`, `fetch_type`. Use `fetch_type: static` unless the page requires JavaScript. For JS pages, try without `wait_ms` first; add it (e.g. `wait_ms: 15000`) if the widget hasn't loaded by networkidle. Use `--debug-html` locally to inspect what Playwright actually fetched.
+
+## Adding shareholder aliases
+
+Edit `aliases.yml` — add a new `canonical` + `aliases` block. To find all name variants for an institution:
+
+```bash
+python3 -c "
+import json
+state = json.loads(open('state.json').read())
+for info in state.values():
+    for sh in info.get('shareholders', []):
+        if 'KEYWORD' in sh['name'].lower(): print(repr(sh['name']))
+" | sort -u
+```
+
+Run `python dev_server.py` while editing — `aliases.json` rebuilds automatically on save.
 
 ## CI / GitHub Actions
 
