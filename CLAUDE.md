@@ -74,11 +74,18 @@ companies.yml → scraper.py → detector.py → notify.py
 - **By Company** — pick a company, see its shareholder list
 - **By Shareholder** — pick an investor, see all companies they appear in; aliases are merged under the canonical name with a "Also listed as" note and a total row
 
-**`dev_server.py`** — Local development only. Combines a Python HTTP server with a file watcher that rebuilds `aliases.json` within 1 second of saving `aliases.yml`.
+**`status.html`** — Scraper health dashboard. Renders all companies as cards with last-scan time, shareholder count, and a status badge (working/partial/empty). Also requires HTTP serving. Useful for spotting broken scrapers at a glance.
+
+**`dev_server.py`** — Local development only. Combines a Python HTTP server with a file watcher that rebuilds `aliases.json` within 1 second of saving `aliases.yml`. Serves both `shareholder.html` and `status.html`.
 
 ## Adding a new company
 
-Add an entry to `companies.yml`. Minimal required fields: `name`, `ticker`, `shareholder_url`, `fetch_type`. Use `fetch_type: static` unless the page requires JavaScript. For JS pages, try without `wait_ms` first; add it (e.g. `wait_ms: 15000`) if the widget hasn't loaded by networkidle. Use `--debug-html` locally to inspect what Playwright actually fetched.
+Add an entry to `companies.yml`. Minimal required fields: `name`, `ticker`, `shareholder_url`, `fetch_type`. The `sector` field is optional but present on all existing entries (used by `status.html`). Use `fetch_type: static` unless the page requires JavaScript. For JS pages, try without `wait_ms` first; add it (e.g. `wait_ms: 15000`) if the widget hasn't loaded by networkidle. Use `--debug-html` locally to inspect what Playwright actually fetched.
+
+To test a new company without affecting state or sending notifications:
+```bash
+python main.py --dry-run --company TICKER
+```
 
 ## Adding shareholder aliases
 
@@ -95,6 +102,10 @@ for info in state.values():
 ```
 
 Run `python dev_server.py` while editing — `aliases.json` rebuilds automatically on save.
+
+## Tests
+
+There are no automated tests in this project. Verification is done manually with `--dry-run` and `--debug-html`.
 
 ## CI / GitHub Actions
 
