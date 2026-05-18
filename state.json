@@ -67,7 +67,7 @@
         "pct": 1.0
       }
     ],
-    "last_scan": "2026-05-15T10:34:03.537830+00:00",
+    "last_scan": "2026-05-18T11:50:17.651536+00:00",
     "total": 16
   },
   "ARION": {
@@ -134,7 +134,7 @@
         "pct": 1.06
       }
     ],
-    "last_scan": "2026-05-15T10:34:01.804123+00:00",
+    "last_scan": "2026-05-18T11:50:16.212208+00:00",
     "total": 15
   },
   "BRIM": {
@@ -221,7 +221,7 @@
         "pct": 0.41
       }
     ],
-    "last_scan": "2026-05-15T10:34:12.980437+00:00",
+    "last_scan": "2026-05-18T11:50:27.768298+00:00",
     "total": 20
   },
   "HAGA": {
@@ -308,7 +308,7 @@
         "pct": 0.65
       }
     ],
-    "last_scan": "2026-05-15T10:34:14.836608+00:00",
+    "last_scan": "2026-05-18T11:50:29.602792+00:00",
     "total": 20
   },
   "HAMP": {
@@ -399,7 +399,7 @@
         "pct": 0.5
       }
     ],
-    "last_scan": "2026-05-15T10:34:17.171574+00:00",
+    "last_scan": "2026-05-18T11:50:31.848874+00:00",
     "total": 21
   },
   "KALD": {
@@ -573,7 +573,7 @@
         "pct": 0.73
       }
     ],
-    "last_scan": "2026-05-15T10:34:05.232016+00:00",
+    "last_scan": "2026-05-18T11:50:19.328886+00:00",
     "total": 20
   },
   "SIMINN": {
@@ -620,7 +620,7 @@
         "pct": 2.12
       }
     ],
-    "last_scan": "2026-05-15T10:34:08.465342+00:00",
+    "last_scan": "2026-05-18T11:50:22.436619+00:00",
     "total": 10
   },
   "SYN": {
@@ -707,7 +707,7 @@
         "pct": 0.4
       }
     ],
-    "last_scan": "2026-05-15T10:34:43.461172+00:00",
+    "last_scan": "2026-05-18T11:50:58.125950+00:00",
     "total": 20
   },
   "AMRQ": {
@@ -742,7 +742,7 @@
         "pct": 3.1
       }
     ],
-    "last_scan": "2026-05-15T10:34:11.493427+00:00",
+    "last_scan": "2026-05-18T11:50:26.327951+00:00",
     "total": 7
   },
   "ICEAIR": {
@@ -809,10 +809,6 @@
         "pct": 0.87
       },
       {
-        "name": "Íslandsbanki hf.",
-        "pct": 0.84
-      },
-      {
         "name": "Söfnunarsjóður Lífeyrisréttinda",
         "pct": 0.82
       },
@@ -821,11 +817,15 @@
         "pct": 0.8
       },
       {
+        "name": "Íslandsbanki hf.",
+        "pct": 0.8
+      },
+      {
         "name": "Frjálsi Pension Fund",
         "pct": 0.61
       }
     ],
-    "last_scan": "2026-05-15T10:36:23.819944+00:00",
+    "last_scan": "2026-05-18T11:52:15.395237+00:00",
     "total": 19
   },
   "NOVA": {
@@ -884,7 +884,7 @@
         "pct": 1.2
       }
     ],
-    "last_scan": "2026-05-15T10:34:47.480236+00:00",
+    "last_scan": "2026-05-18T11:51:04.218623+00:00",
     "total": 13
   },
   "FESTI": {
@@ -968,10 +968,10 @@
       },
       {
         "name": "Landsbankinn hf.",
-        "pct": 0.61
+        "pct": 0.62
       }
     ],
-    "last_scan": "2026-05-15T10:35:13.850821+00:00",
+    "last_scan": "2026-05-18T11:51:31.639852+00:00",
     "total": 20
   },
   "HEIMAR": {
@@ -1031,7 +1031,7 @@
       },
       {
         "name": "Íslandsbanki hf.",
-        "pct": 2.33
+        "pct": 2.3
       },
       {
         "name": "Söfnunarsjóður lífeyrisréttinda",
@@ -1043,7 +1043,7 @@
       },
       {
         "name": "Stefnir hf.",
-        "pct": 1.56
+        "pct": 1.49
       },
       {
         "name": "Kristinn ehf.",
@@ -1058,7 +1058,7 @@
         "pct": 1.31
       }
     ],
-    "last_scan": "2026-05-15T10:35:19.524220+00:00",
+    "last_scan": "2026-05-18T11:51:37.348530+00:00",
     "total": 20
   },
   "ISB": {
@@ -1090,7 +1090,7 @@
       },
       {
         "name": "Íslandsbanki hf.",
-        "pct": 3.06
+        "pct": 3.22
       },
       {
         "name": "Almenni-Lífsverk lífeyrissjóður",
@@ -1125,7 +1125,7 @@
         "pct": 1.01
       }
     ],
-    "last_scan": "2026-05-15T10:35:30.300597+00:00",
+    "last_scan": "2026-05-18T11:51:48.898483+00:00",
     "total": 15
   },
   "REITIR": {
@@ -1212,7 +1212,7 @@
         "pct": 0.99
       }
     ],
-    "last_scan": "2026-05-15T10:36:00.488069+00:00",
+    "last_scan": "2026-05-18T11:51:52.108901+00:00",
     "total": 20
   },
   "SKAGI": {
@@ -1264,7 +1264,7 @@
       },
       {
         "name": "Skagi hf.",
-        "pct": 1.9
+        "pct": 2.0
       },
       {
         "name": "Almenni-Lífsverk lífeyrissjóður",
@@ -1280,7 +1280,7 @@
       },
       {
         "name": "Landsbankinn hf.",
-        "pct": 1.2
+        "pct": 1.3
       },
       {
         "name": "Vanguard Total International S",
@@ -1296,10 +1296,10 @@
       },
       {
         "name": "Arion banki hf.",
-        "pct": 1.0
+        "pct": 0.9
       }
     ],
-    "last_scan": "2026-05-15T10:36:04.420237+00:00",
+    "last_scan": "2026-05-18T11:51:56.036165+00:00",
     "total": 20
   },
   "EIK": {
@@ -1370,23 +1370,23 @@
         "pct": 0.521
       },
       {
-        "name": "Síldarbein ehf.",
-        "pct": 0.513
+        "name": "Arion banki hf.",
+        "pct": 0.519
       },
       {
-        "name": "Arion banki hf.",
-        "pct": 0.509
+        "name": "Síldarbein ehf.",
+        "pct": 0.513
       },
       {
         "name": "Kuwait Investment Authority",
         "pct": 0.478
       },
       {
-        "name": "Íslenski lífeyrissj-samtrygging",
-        "pct": 0.436
+        "name": "Sjóvá-Almennar tryggingar hf.",
+        "pct": 0.44
       }
     ],
-    "last_scan": "2026-05-15T10:35:00.684372+00:00",
+    "last_scan": "2026-05-18T11:51:17.642001+00:00",
     "total": 20
   },
   "BERA": {
@@ -1560,7 +1560,7 @@
         "pct": 0.464
       }
     ],
-    "last_scan": "2026-05-15T10:35:07.106252+00:00",
+    "last_scan": "2026-05-18T11:51:25.064329+00:00",
     "total": 20
   },
   "ISF": {
@@ -1647,7 +1647,7 @@
         "pct": 0.337
       }
     ],
-    "last_scan": "2026-05-15T10:35:25.107057+00:00",
+    "last_scan": "2026-05-18T11:51:42.888852+00:00",
     "total": 20
   },
   "SKEL": {
@@ -1734,7 +1734,7 @@
         "pct": 0.548
       }
     ],
-    "last_scan": "2026-05-15T10:36:08.637644+00:00",
+    "last_scan": "2026-05-18T11:52:00.080153+00:00",
     "total": 20
   },
   "SVN": {
@@ -1821,7 +1821,7 @@
         "pct": 0.531
       }
     ],
-    "last_scan": "2026-05-15T10:36:14.007344+00:00",
+    "last_scan": "2026-05-18T11:52:05.689142+00:00",
     "total": 20
   },
   "ICESEA": {
@@ -1873,11 +1873,11 @@
       },
       {
         "name": "Kvika banki hf.",
-        "pct": 1.909
+        "pct": 1.947
       },
       {
         "name": "Arion banki hf.",
-        "pct": 1.435
+        "pct": 1.472
       },
       {
         "name": "Ecock Holdings Ltd.",
@@ -1908,7 +1908,7 @@
         "pct": 0.804
       }
     ],
-    "last_scan": "2026-05-15T10:36:30.071459+00:00",
+    "last_scan": "2026-05-18T11:52:25.721465+00:00",
     "total": 20
   },
   "ALVO": {
@@ -1995,7 +1995,7 @@
         "pct": 0.23
       }
     ],
-    "last_scan": "2026-05-15T10:36:34.821252+00:00",
+    "last_scan": "2026-05-18T11:52:29.530768+00:00",
     "total": 20
   },
   "JBTM": {
@@ -2039,10 +2039,10 @@
       },
       {
         "name": "Kayne Anderson Rudnick Investment Management LLC",
-        "pct": 2.15
+        "pct": 2.06
       }
     ],
-    "last_scan": "2026-05-15T10:36:51.126098+00:00",
+    "last_scan": "2026-05-18T11:52:46.107025+00:00",
     "total": 10
   },
   "OCS": {
@@ -2057,12 +2057,12 @@
         "pct": 4.19
       },
       {
-        "name": "Pivotal bioVenture Partners Investment Advisor, LLC",
-        "pct": 3.95
-      },
-      {
         "name": "Aberdeen Group plc",
         "pct": 3.01
+      },
+      {
+        "name": "Pivotal bioVenture Partners Investment Advisor, LLC",
+        "pct": 2.9
       },
       {
         "name": "Wellington Management Group, LLP",
@@ -2073,10 +2073,6 @@
         "pct": 1.11
       },
       {
-        "name": "Nan Fung Group Holdings Limited",
-        "pct": 0.89
-      },
-      {
         "name": "Saturn V Capital Management LP",
         "pct": 0.89
       },
@@ -2085,11 +2081,15 @@
         "pct": 0.85
       },
       {
+        "name": "Nan Fung Group Holdings Limited",
+        "pct": 0.6
+      },
+      {
         "name": "Alyeska Investment Group, L.p.",
         "pct": 0.57
       }
     ],
-    "last_scan": "2026-05-15T10:37:07.393440+00:00",
+    "last_scan": "2026-05-18T11:53:02.491707+00:00",
     "total": 10
   }
 }
