@@ -28,7 +28,7 @@
       },
       {
         "name": "Frigus Invest ehf.",
-        "pct": 3.36
+        "pct": 3.37
       },
       {
         "name": "Frjálsi lífeyrissjóðurinn",
@@ -40,7 +40,7 @@
       },
       {
         "name": "Arion banki hf.",
-        "pct": 2.3
+        "pct": 2.27
       },
       {
         "name": "Vanguard Total International S",
@@ -67,7 +67,7 @@
         "pct": 1.0
       }
     ],
-    "last_scan": "2026-05-18T11:50:17.651536+00:00",
+    "last_scan": "2026-05-19T11:27:41.593196+00:00",
     "total": 16
   },
   "ARION": {
@@ -123,7 +123,7 @@
       },
       {
         "name": "Íslandsbanki hf.",
-        "pct": 1.48
+        "pct": 1.53
       },
       {
         "name": "Stefnir Funds",
@@ -134,7 +134,7 @@
         "pct": 1.06
       }
     ],
-    "last_scan": "2026-05-18T11:50:16.212208+00:00",
+    "last_scan": "2026-05-19T11:27:40.137442+00:00",
     "total": 15
   },
   "BRIM": {
@@ -221,7 +221,7 @@
         "pct": 0.41
       }
     ],
-    "last_scan": "2026-05-18T11:50:27.768298+00:00",
+    "last_scan": "2026-05-19T11:27:52.095700+00:00",
     "total": 20
   },
   "HAGA": {
@@ -308,7 +308,7 @@
         "pct": 0.65
       }
     ],
-    "last_scan": "2026-05-18T11:50:29.602792+00:00",
+    "last_scan": "2026-05-19T11:27:53.822540+00:00",
     "total": 20
   },
   "HAMP": {
@@ -399,7 +399,7 @@
         "pct": 0.5
       }
     ],
-    "last_scan": "2026-05-18T11:50:31.848874+00:00",
+    "last_scan": "2026-05-19T11:27:55.937892+00:00",
     "total": 21
   },
   "KALD": {
@@ -526,11 +526,11 @@
       },
       {
         "name": "Stapi lífeyrissjóður",
-        "pct": 2.26
+        "pct": 2.29
       },
       {
         "name": "Stefnir - Innlend hlutabréf hs.",
-        "pct": 2.11
+        "pct": 2.21
       },
       {
         "name": "Birta lífeyrissjóður",
@@ -562,7 +562,7 @@
       },
       {
         "name": "Stefnir - ÍS 5 hs.",
-        "pct": 0.76
+        "pct": 0.81
       },
       {
         "name": "Almenni-Lífsverk lífeyrissjóður",
@@ -573,7 +573,7 @@
         "pct": 0.73
       }
     ],
-    "last_scan": "2026-05-18T11:50:19.328886+00:00",
+    "last_scan": "2026-05-19T11:27:43.720281+00:00",
     "total": 20
   },
   "SIMINN": {
@@ -593,11 +593,11 @@
       },
       {
         "name": "Lífeyrissjóður verzlunarmanna",
-        "pct": 8.75
+        "pct": 8.94
       },
       {
         "name": "Gildi - lífeyrissjóður",
-        "pct": 7.76
+        "pct": 8.02
       },
       {
         "name": "Söfnunarsjóður lífeyrisréttinda",
@@ -605,7 +605,7 @@
       },
       {
         "name": "Stapi lífeyrissjóður",
-        "pct": 3.31
+        "pct": 3.52
       },
       {
         "name": "Birta lífeyrissjóður",
@@ -620,7 +620,7 @@
         "pct": 2.12
       }
     ],
-    "last_scan": "2026-05-18T11:50:22.436619+00:00",
+    "last_scan": "2026-05-19T11:27:47.293607+00:00",
     "total": 10
   },
   "SYN": {
@@ -707,7 +707,7 @@
         "pct": 0.4
       }
     ],
-    "last_scan": "2026-05-18T11:50:58.125950+00:00",
+    "last_scan": "2026-05-19T11:28:22.349397+00:00",
     "total": 20
   },
   "AMRQ": {
@@ -742,7 +742,7 @@
         "pct": 3.1
       }
     ],
-    "last_scan": "2026-05-18T11:50:26.327951+00:00",
+    "last_scan": "2026-05-19T11:27:50.897614+00:00",
     "total": 7
   },
   "ICEAIR": {
@@ -825,7 +825,7 @@
         "pct": 0.61
       }
     ],
-    "last_scan": "2026-05-18T11:52:15.395237+00:00",
+    "last_scan": "2026-05-19T11:29:49.555721+00:00",
     "total": 19
   },
   "NOVA": {
@@ -884,7 +884,7 @@
         "pct": 1.2
       }
     ],
-    "last_scan": "2026-05-18T11:51:04.218623+00:00",
+    "last_scan": "2026-05-19T11:28:28.921103+00:00",
     "total": 13
   },
   "FESTI": {
@@ -952,7 +952,7 @@
       },
       {
         "name": "IS Funds",
-        "pct": 0.96
+        "pct": 0.92
       },
       {
         "name": "Hibb Holding Ehf.",
@@ -971,7 +971,7 @@
         "pct": 0.62
       }
     ],
-    "last_scan": "2026-05-18T11:51:31.639852+00:00",
+    "last_scan": "2026-05-19T11:29:00.803205+00:00",
     "total": 20
   },
   "HEIMAR": {
@@ -1058,7 +1058,7 @@
         "pct": 1.31
       }
     ],
-    "last_scan": "2026-05-18T11:51:37.348530+00:00",
+    "last_scan": "2026-05-19T11:29:08.163366+00:00",
     "total": 20
   },
   "ISB": {
@@ -1106,11 +1106,11 @@
       },
       {
         "name": "Kvika banki hf.",
-        "pct": 1.58
+        "pct": 1.55
       },
       {
         "name": "Landsbréf hf.",
-        "pct": 1.24
+        "pct": 1.22
       },
       {
         "name": "Festa lífeyrissjóður",
@@ -1125,7 +1125,7 @@
         "pct": 1.01
       }
     ],
-    "last_scan": "2026-05-18T11:51:48.898483+00:00",
+    "last_scan": "2026-05-19T11:29:20.260656+00:00",
     "total": 15
   },
   "REITIR": {
@@ -1212,7 +1212,7 @@
         "pct": 0.99
       }
     ],
-    "last_scan": "2026-05-18T11:51:52.108901+00:00",
+    "last_scan": "2026-05-19T11:29:24.295344+00:00",
     "total": 20
   },
   "SKAGI": {
@@ -1259,11 +1259,11 @@
         "pct": 2.6
       },
       {
-        "name": "Stefnir - Innlend hlutabréf hs.",
+        "name": "Skagi hf.",
         "pct": 2.0
       },
       {
-        "name": "Skagi hf.",
+        "name": "Stefnir - Innlend hlutabréf hs.",
         "pct": 2.0
       },
       {
@@ -1299,7 +1299,7 @@
         "pct": 0.9
       }
     ],
-    "last_scan": "2026-05-18T11:51:56.036165+00:00",
+    "last_scan": "2026-05-19T11:29:28.722473+00:00",
     "total": 20
   },
   "EIK": {
@@ -1370,12 +1370,12 @@
         "pct": 0.521
       },
       {
-        "name": "Arion banki hf.",
-        "pct": 0.519
-      },
-      {
         "name": "Síldarbein ehf.",
         "pct": 0.513
+      },
+      {
+        "name": "Arion banki hf.",
+        "pct": 0.503
       },
       {
         "name": "Kuwait Investment Authority",
@@ -1383,10 +1383,10 @@
       },
       {
         "name": "Sjóvá-Almennar tryggingar hf.",
-        "pct": 0.44
+        "pct": 0.454
       }
     ],
-    "last_scan": "2026-05-18T11:51:17.642001+00:00",
+    "last_scan": "2026-05-19T11:28:42.726016+00:00",
     "total": 20
   },
   "BERA": {
@@ -1560,7 +1560,7 @@
         "pct": 0.464
       }
     ],
-    "last_scan": "2026-05-18T11:51:25.064329+00:00",
+    "last_scan": "2026-05-19T11:28:50.613391+00:00",
     "total": 20
   },
   "ISF": {
@@ -1647,7 +1647,7 @@
         "pct": 0.337
       }
     ],
-    "last_scan": "2026-05-18T11:51:42.888852+00:00",
+    "last_scan": "2026-05-19T11:29:14.976831+00:00",
     "total": 20
   },
   "SKEL": {
@@ -1679,7 +1679,7 @@
       },
       {
         "name": "Kvika - Innlend hlutabréf",
-        "pct": 1.306
+        "pct": 1.519
       },
       {
         "name": "Hofgarðar ehf.",
@@ -1734,7 +1734,7 @@
         "pct": 0.548
       }
     ],
-    "last_scan": "2026-05-18T11:52:00.080153+00:00",
+    "last_scan": "2026-05-19T11:29:33.392677+00:00",
     "total": 20
   },
   "SVN": {
@@ -1821,7 +1821,7 @@
         "pct": 0.531
       }
     ],
-    "last_scan": "2026-05-18T11:52:05.689142+00:00",
+    "last_scan": "2026-05-19T11:29:39.113374+00:00",
     "total": 20
   },
   "ICESEA": {
@@ -1877,7 +1877,7 @@
       },
       {
         "name": "Arion banki hf.",
-        "pct": 1.472
+        "pct": 1.471
       },
       {
         "name": "Ecock Holdings Ltd.",
@@ -1908,7 +1908,7 @@
         "pct": 0.804
       }
     ],
-    "last_scan": "2026-05-18T11:52:25.721465+00:00",
+    "last_scan": "2026-05-19T11:29:59.834387+00:00",
     "total": 20
   },
   "ALVO": {
@@ -1995,7 +1995,7 @@
         "pct": 0.23
       }
     ],
-    "last_scan": "2026-05-18T11:52:29.530768+00:00",
+    "last_scan": "2026-05-19T11:30:04.383828+00:00",
     "total": 20
   },
   "JBTM": {
@@ -2010,39 +2010,39 @@
         "pct": 5.41
       },
       {
+        "name": "Price (T.Rowe) Associates Inc",
+        "pct": 5.28
+      },
+      {
         "name": "Vanguard Capital Management LLC",
         "pct": 4.47
       },
       {
-        "name": "State Street Corporation",
-        "pct": 3.75
+        "name": "T. Rowe Price Investment Management, Inc.",
+        "pct": 3.99
       },
       {
-        "name": "FMR, LLC",
-        "pct": 3.73
+        "name": "State Street Corporation",
+        "pct": 3.84
       },
       {
         "name": "UBS AM, a distinct business unit of UBS ASSET MANAGEMENT AMERICAS LLC",
         "pct": 3.22
       },
       {
-        "name": "Price (T.Rowe) Associates Inc",
-        "pct": 2.8
-      },
-      {
-        "name": "T. Rowe Price Investment Management, Inc.",
-        "pct": 2.53
-      },
-      {
         "name": "Geode Capital Management, LLC",
-        "pct": 2.39
+        "pct": 2.47
       },
       {
         "name": "Kayne Anderson Rudnick Investment Management LLC",
         "pct": 2.06
+      },
+      {
+        "name": "Gildi - Lifeyrissjodur",
+        "pct": 2.05
       }
     ],
-    "last_scan": "2026-05-18T11:52:46.107025+00:00",
+    "last_scan": "2026-05-19T11:30:20.405431+00:00",
     "total": 10
   },
   "OCS": {
@@ -2066,7 +2066,15 @@
       },
       {
         "name": "Wellington Management Group, LLP",
-        "pct": 2.34
+        "pct": 2.32
+      },
+      {
+        "name": "Millennium Management Llc",
+        "pct": 1.57
+      },
+      {
+        "name": "Adage Capital Partners GP L.L.C.",
+        "pct": 1.44
       },
       {
         "name": "SR One Capital Management, LP",
@@ -2079,17 +2087,9 @@
       {
         "name": "Perceptive Advisors Llc",
         "pct": 0.85
-      },
-      {
-        "name": "Nan Fung Group Holdings Limited",
-        "pct": 0.6
-      },
-      {
-        "name": "Alyeska Investment Group, L.p.",
-        "pct": 0.57
       }
     ],
-    "last_scan": "2026-05-18T11:53:02.491707+00:00",
+    "last_scan": "2026-05-19T11:30:37.308082+00:00",
     "total": 10
   }
 }
