@@ -12,7 +12,7 @@
       },
       {
         "name": "Birta lífeyrissjóður",
-        "pct": 8.22
+        "pct": 8.27
       },
       {
         "name": "Lífeyrissj.starfsm.rík. A-deild",
@@ -28,7 +28,7 @@
       },
       {
         "name": "Frigus Invest ehf.",
-        "pct": 3.42
+        "pct": 3.44
       },
       {
         "name": "Frjálsi lífeyrissjóðurinn",
@@ -40,7 +40,7 @@
       },
       {
         "name": "Arion banki hf.",
-        "pct": 2.47
+        "pct": 2.39
       },
       {
         "name": "Vanguard Total International S",
@@ -67,7 +67,7 @@
         "pct": 1.0
       }
     ],
-    "last_scan": "2026-05-25T11:57:41.204150+00:00",
+    "last_scan": "2026-05-28T11:44:39.542288+00:00",
     "total": 16
   },
   "ARION": {
@@ -123,7 +123,7 @@
       },
       {
         "name": "Íslandsbanki hf.",
-        "pct": 1.56
+        "pct": 1.54
       },
       {
         "name": "Stefnir Funds",
@@ -131,14 +131,14 @@
       },
       {
         "name": "A.C.S Safnreikningur I",
-        "pct": 1.27
+        "pct": 1.29
       },
       {
         "name": "Arion banki hf.",
         "pct": 1.06
       }
     ],
-    "last_scan": "2026-05-25T11:57:39.967355+00:00",
+    "last_scan": "2026-05-28T11:44:37.962287+00:00",
     "total": 16
   },
   "BRIM": {
@@ -225,7 +225,7 @@
         "pct": 0.41
       }
     ],
-    "last_scan": "2026-05-25T11:57:50.880951+00:00",
+    "last_scan": "2026-05-28T11:44:50.540713+00:00",
     "total": 20
   },
   "HAGA": {
@@ -312,7 +312,7 @@
         "pct": 0.65
       }
     ],
-    "last_scan": "2026-05-25T11:57:52.649822+00:00",
+    "last_scan": "2026-05-28T11:44:52.520075+00:00",
     "total": 20
   },
   "HAMP": {
@@ -403,7 +403,7 @@
         "pct": 0.5
       }
     ],
-    "last_scan": "2026-05-25T11:57:54.745086+00:00",
+    "last_scan": "2026-05-28T11:44:54.700219+00:00",
     "total": 21
   },
   "KALD": {
@@ -577,7 +577,7 @@
         "pct": 0.73
       }
     ],
-    "last_scan": "2026-05-25T11:57:42.956149+00:00",
+    "last_scan": "2026-05-28T11:44:41.352687+00:00",
     "total": 20
   },
   "SIMINN": {
@@ -612,19 +612,19 @@
         "pct": 3.52
       },
       {
-        "name": "Birta lífeyrissjóður",
-        "pct": 3.13
+        "name": "Síminn hf.",
+        "pct": 3.29
       },
       {
-        "name": "Síminn hf.",
-        "pct": 3.12
+        "name": "Birta lífeyrissjóður",
+        "pct": 3.25
       },
       {
         "name": "Lífeyrissj.starfsm.rík. B-deild",
         "pct": 2.12
       }
     ],
-    "last_scan": "2026-05-25T11:57:46.254117+00:00",
+    "last_scan": "2026-05-28T11:44:44.645087+00:00",
     "total": 10
   },
   "SYN": {
@@ -711,7 +711,7 @@
         "pct": 0.4
       }
     ],
-    "last_scan": "2026-05-25T11:58:21.077879+00:00",
+    "last_scan": "2026-05-28T11:45:21.079637+00:00",
     "total": 20
   },
   "AMRQ": {
@@ -746,7 +746,7 @@
         "pct": 3.1
       }
     ],
-    "last_scan": "2026-05-25T11:57:49.511326+00:00",
+    "last_scan": "2026-05-28T11:44:49.183345+00:00",
     "total": 7
   },
   "ICEAIR": {
@@ -822,14 +822,14 @@
       },
       {
         "name": "Íslandsbanki hf.",
-        "pct": 0.73
+        "pct": 0.77
       },
       {
         "name": "Frjálsi Pension Fund",
         "pct": 0.61
       }
     ],
-    "last_scan": "2026-05-25T11:59:37.753346+00:00",
+    "last_scan": "2026-05-28T11:46:49.765456+00:00",
     "total": 19
   },
   "NOVA": {
@@ -888,7 +888,7 @@
         "pct": 1.2
       }
     ],
-    "last_scan": "2026-05-25T11:58:27.191629+00:00",
+    "last_scan": "2026-05-28T11:45:27.878392+00:00",
     "total": 13
   },
   "FESTI": {
@@ -904,7 +904,7 @@
       },
       {
         "name": "Brú lífeyrissjóður",
-        "pct": 10.55
+        "pct": 10.69
       },
       {
         "name": "Gildi lífeyrissjóður",
@@ -940,7 +940,7 @@
       },
       {
         "name": "Landsbréf hf.",
-        "pct": 1.87
+        "pct": 1.84
       },
       {
         "name": "Stefnir hf",
@@ -956,7 +956,7 @@
       },
       {
         "name": "IS Funds",
-        "pct": 1.05
+        "pct": 0.94
       },
       {
         "name": "Hibb Holding Ehf.",
@@ -972,10 +972,10 @@
       },
       {
         "name": "Landsbankinn hf.",
-        "pct": 0.62
+        "pct": 0.61
       }
     ],
-    "last_scan": "2026-05-25T11:58:55.309398+00:00",
+    "last_scan": "2026-05-28T11:45:54.696909+00:00",
     "total": 20
   },
   "HEIMAR": {
@@ -995,7 +995,7 @@
       },
       {
         "name": "Birta lífeyrissjóður",
-        "pct": 7.12
+        "pct": 7.17
       },
       {
         "name": "Brú lífeyrissjóður",
@@ -1023,7 +1023,7 @@
       },
       {
         "name": "The Vanguard Group Inc.",
-        "pct": 3.15
+        "pct": 3.19
       },
       {
         "name": "Brimgarðar ehf.",
@@ -1035,7 +1035,7 @@
       },
       {
         "name": "Íslandsbanki hf.",
-        "pct": 2.3
+        "pct": 2.29
       },
       {
         "name": "Söfnunarsjóður lífeyrisréttinda",
@@ -1062,7 +1062,7 @@
         "pct": 1.31
       }
     ],
-    "last_scan": "2026-05-25T11:58:59.861252+00:00",
+    "last_scan": "2026-05-28T11:45:58.996953+00:00",
     "total": 20
   },
   "ISB": {
@@ -1070,7 +1070,7 @@
     "shareholders": [
       {
         "name": "Lífeyrissjóður starfsmanna ríkisins",
-        "pct": 8.66
+        "pct": 8.64
       },
       {
         "name": "Gildi lífeyrissjóður",
@@ -1110,7 +1110,7 @@
       },
       {
         "name": "Kvika banki hf.",
-        "pct": 1.66
+        "pct": 1.67
       },
       {
         "name": "Landsbréf hf.",
@@ -1129,7 +1129,7 @@
         "pct": 1.01
       }
     ],
-    "last_scan": "2026-05-25T11:59:11.405396+00:00",
+    "last_scan": "2026-05-28T11:46:21.880178+00:00",
     "total": 15
   },
   "REITIR": {
@@ -1137,86 +1137,86 @@
     "shareholders": [
       {
         "name": "Gildi - lífeyrissjóður",
-        "pct": 18.74
+        "pct": 19.1
       },
       {
         "name": "Lífeyrissjóður verzlunarmanna",
-        "pct": 11.0
+        "pct": 11.47
       },
       {
         "name": "Lífeyrissj.starfsm.rík. A-deild",
-        "pct": 8.35
-      },
-      {
-        "name": "Íslandsbanki hf.",
-        "pct": 5.16
-      },
-      {
-        "name": "Birta lífeyrissjóður",
-        "pct": 4.57
-      },
-      {
-        "name": "Festa - lífeyrissjóður",
-        "pct": 4.52
-      },
-      {
-        "name": "Kjölur fjárfestingarfélag ehf.",
-        "pct": 4.22
-      },
-      {
-        "name": "Almenni-Lífsverk lífeyrissjóður",
-        "pct": 4.11
+        "pct": 8.79
       },
       {
         "name": "Brimgarðar ehf.",
-        "pct": 3.78
+        "pct": 5.32
+      },
+      {
+        "name": "Festa - lífeyrissjóður",
+        "pct": 4.92
+      },
+      {
+        "name": "Birta lífeyrissjóður",
+        "pct": 4.76
+      },
+      {
+        "name": "Kjölur fjárfestingarfélag ehf.",
+        "pct": 4.41
+      },
+      {
+        "name": "Almenni-Lífsverk lífeyrissjóður",
+        "pct": 4.18
+      },
+      {
+        "name": "Íslandsbanki hf.",
+        "pct": 4.17
       },
       {
         "name": "Frjálsi lífeyrissjóðurinn",
-        "pct": 3.03
-      },
-      {
-        "name": "Söfnunarsjóður lífeyrisréttinda",
-        "pct": 2.77
-      },
-      {
-        "name": "Arion banki hf.",
-        "pct": 2.54
+        "pct": 3.09
       },
       {
         "name": "Stapi lífeyrissjóður",
-        "pct": 2.45
+        "pct": 2.89
       },
       {
-        "name": "Reitir fasteignafélag hf.",
-        "pct": 1.83
+        "name": "Söfnunarsjóður lífeyrisréttinda",
+        "pct": 2.83
+      },
+      {
+        "name": "Arion banki hf.",
+        "pct": 2.06
       },
       {
         "name": "Lífeyrissj.starfsm.rík. B-deild",
-        "pct": 1.51
+        "pct": 1.54
       },
       {
         "name": "Vanguard Total International S",
-        "pct": 1.37
+        "pct": 1.39
       },
       {
         "name": "Arcus Invest ehf.",
-        "pct": 1.25
+        "pct": 1.32
       },
       {
         "name": "Vanguard Emerging Markets Stock",
-        "pct": 1.14
-      },
-      {
-        "name": "GJ Invest ehf.",
-        "pct": 1.02
+        "pct": 1.17
       },
       {
         "name": "Sjóvá-Almennar tryggingar hf.",
-        "pct": 0.99
+        "pct": 0.96
+      },
+      {
+        "name": "Lífeyrissjóður Vestmannaeyja",
+        "pct": 0.93
+      },
+      {
+        "name": "Landsbréf - Úrvalsbréf hs.",
+        "pct": 0.67
       }
     ],
-    "last_scan": "2026-05-25T11:59:15.071682+00:00",
+    "last_scan": "2026-05-28T11:46:25.418573+00:00",
     "total": 20
   },
   "SKAGI": {
@@ -1264,7 +1264,7 @@
       },
       {
         "name": "Skagi hf.",
-        "pct": 2.3
+        "pct": 2.4
       },
       {
         "name": "Stefnir - Innlend hlutabréf hs.",
@@ -1303,7 +1303,7 @@
         "pct": 0.9
       }
     ],
-    "last_scan": "2026-05-25T11:59:18.940174+00:00",
+    "last_scan": "2026-05-28T11:46:29.568354+00:00",
     "total": 20
   },
   "EIK": {
@@ -1378,19 +1378,19 @@
         "pct": 0.513
       },
       {
-        "name": "Arion banki hf.",
-        "pct": 0.499
-      },
-      {
         "name": "Kuwait Investment Authority",
         "pct": 0.478
+      },
+      {
+        "name": "Arion banki hf.",
+        "pct": 0.477
       },
       {
         "name": "Sjóvá-Almennar tryggingar hf.",
         "pct": 0.456
       }
     ],
-    "last_scan": "2026-05-25T11:58:41.550755+00:00",
+    "last_scan": "2026-05-28T11:45:41.683649+00:00",
     "total": 20
   },
   "BERA": {
@@ -1485,86 +1485,86 @@
     "shareholders": [
       {
         "name": "Seley ehf.",
-        "pct": 33.548
+        "pct": 34.02
       },
       {
         "name": "Gildi - lífeyrissjóður",
-        "pct": 13.836
+        "pct": 14.031
       },
       {
         "name": "Lífeyrissjóður verzlunarmanna",
-        "pct": 12.596
+        "pct": 12.835
       },
       {
         "name": "Birta lífeyrissjóður",
-        "pct": 6.43
+        "pct": 6.631
       },
       {
         "name": "Lífeyrissj.starfsm.rík. A-deild",
-        "pct": 4.09
+        "pct": 4.086
       },
       {
         "name": "Stapi lífeyrissjóður",
-        "pct": 3.703
+        "pct": 3.755
       },
       {
         "name": "Almenni-Lífsverk lífeyrissjóður",
-        "pct": 3.378
+        "pct": 3.425
       },
       {
         "name": "Festa - lífeyrissjóður",
-        "pct": 2.539
-      },
-      {
-        "name": "Eimskipafélag Íslands hf.",
-        "pct": 2.399
+        "pct": 2.575
       },
       {
         "name": "Sjóvá-Almennar tryggingar hf.",
-        "pct": 1.722
+        "pct": 1.746
       },
       {
         "name": "Söfnunarsjóður lífeyrisréttinda",
-        "pct": 1.333
+        "pct": 1.352
       },
       {
         "name": "Landsbréf - Úrvalsbréf hs.",
-        "pct": 1.026
+        "pct": 1.083
+      },
+      {
+        "name": "Eimskipafélag Íslands hf.",
+        "pct": 1.025
       },
       {
         "name": "Vanguard Total International S",
-        "pct": 0.906
+        "pct": 0.919
       },
       {
         "name": "Lífeyrissj.starfsm.rík. B-deild",
-        "pct": 0.868
+        "pct": 0.88
       },
       {
         "name": "Vanguard Emerging Markets Stock",
-        "pct": 0.843
+        "pct": 0.855
       },
       {
         "name": "Stefnir - Innlend hlutabréf hs.",
-        "pct": 0.665
+        "pct": 0.644
       },
       {
         "name": "Íslenski lífeyrissj-Lífsbraut 1",
-        "pct": 0.537
+        "pct": 0.544
       },
       {
         "name": "Global Macro Absolute Return Ad",
-        "pct": 0.488
-      },
-      {
-        "name": "Landsbréf - Öndvegisbréf hs.",
-        "pct": 0.475
+        "pct": 0.495
       },
       {
         "name": "Vanguard Fiduciary Trust Compa",
-        "pct": 0.464
+        "pct": 0.47
+      },
+      {
+        "name": "Lífeyrissjóður Vestmannaeyja",
+        "pct": 0.425
       }
     ],
-    "last_scan": "2026-05-25T11:58:48.159643+00:00",
+    "last_scan": "2026-05-28T11:45:48.300820+00:00",
     "total": 20
   },
   "ISF": {
@@ -1651,7 +1651,7 @@
         "pct": 0.337
       }
     ],
-    "last_scan": "2026-05-25T11:59:06.259750+00:00",
+    "last_scan": "2026-05-28T11:46:16.720739+00:00",
     "total": 20
   },
   "SKEL": {
@@ -1738,7 +1738,7 @@
         "pct": 0.548
       }
     ],
-    "last_scan": "2026-05-25T11:59:23.031219+00:00",
+    "last_scan": "2026-05-28T11:46:33.994655+00:00",
     "total": 20
   },
   "SVN": {
@@ -1761,24 +1761,24 @@
         "pct": 10.102
       },
       {
-        "name": "Eignarhaldsfélagið Snæfugl ehf.",
-        "pct": 3.359
+        "name": "Lífeyrissj.starfsm.rík. A-deild",
+        "pct": 3.311
       },
       {
         "name": "Lífeyrissjóður verzlunarmanna",
         "pct": 3.238
       },
       {
-        "name": "Lífeyrissj.starfsm.rík. A-deild",
-        "pct": 3.107
-      },
-      {
         "name": "Brú Lífeyrissjóður starfs sveit",
         "pct": 2.975
       },
       {
+        "name": "Eignarhaldsfélagið Snæfugl ehf.",
+        "pct": 2.839
+      },
+      {
         "name": "Stapi lífeyrissjóður",
-        "pct": 2.621
+        "pct": 2.679
       },
       {
         "name": "Almenni-Lífsverk lífeyrissjóður",
@@ -1802,7 +1802,7 @@
       },
       {
         "name": "Snæból ehf.",
-        "pct": 0.921
+        "pct": 0.867
       },
       {
         "name": "Olíusamlag útvegsmanna Nesk svf",
@@ -1810,22 +1810,22 @@
       },
       {
         "name": "Lífeyrissj.starfsm.rík. B-deild",
-        "pct": 0.593
-      },
-      {
-        "name": "Ljóshaf ehf.",
-        "pct": 0.568
+        "pct": 0.611
       },
       {
         "name": "Dorg ehf.",
         "pct": 0.542
       },
       {
+        "name": "SDP ehf.",
+        "pct": 0.531
+      },
+      {
         "name": "Brú R deild",
         "pct": 0.531
       }
     ],
-    "last_scan": "2026-05-25T11:59:28.391211+00:00",
+    "last_scan": "2026-05-28T11:46:39.713747+00:00",
     "total": 20
   },
   "ICESEA": {
@@ -1849,7 +1849,7 @@
       },
       {
         "name": "Birta lífeyrissjóður",
-        "pct": 6.779
+        "pct": 6.812
       },
       {
         "name": "Almenni-Lífsverk lífeyrissjóður",
@@ -1877,7 +1877,7 @@
       },
       {
         "name": "Kvika banki hf.",
-        "pct": 1.946
+        "pct": 1.877
       },
       {
         "name": "Arion banki hf.",
@@ -1912,7 +1912,7 @@
         "pct": 0.804
       }
     ],
-    "last_scan": "2026-05-25T11:59:44.159438+00:00",
+    "last_scan": "2026-05-28T11:46:58.191340+00:00",
     "total": 20
   },
   "ALVO": {
@@ -1999,7 +1999,7 @@
         "pct": 0.23
       }
     ],
-    "last_scan": "2026-05-25T11:59:50.780663+00:00",
+    "last_scan": "2026-05-28T11:47:02.504064+00:00",
     "total": 20
   },
   "JBTM": {
@@ -2046,7 +2046,7 @@
         "pct": 2.05
       }
     ],
-    "last_scan": "2026-05-25T12:00:07.339831+00:00",
+    "last_scan": "2026-05-28T11:47:18.694864+00:00",
     "total": 10
   },
   "OCS": {
@@ -2093,7 +2093,7 @@
         "pct": 0.85
       }
     ],
-    "last_scan": "2026-05-25T12:00:23.760680+00:00",
+    "last_scan": "2026-05-28T11:47:34.882617+00:00",
     "total": 10
   }
 }
